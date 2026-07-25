@@ -129,22 +129,22 @@ const PROJECTS = [
   },
   {
     slug: 'other-skills-music',
-    title: 'Music',
+    title: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     category: 'Other Skills',
     group: 'other-skills',
     date: '',
-    description: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     images: [
       'images/projects/other-skills-music/1.jpg'
     ]
   },
   {
     slug: 'other-skills-sports',
-    title: 'Sports',
+    title: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     category: 'Other Skills',
     group: 'other-skills',
     date: '',
-    description: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     images: [
       'images/projects/other-skills-sports/1.jpg'
     ]
