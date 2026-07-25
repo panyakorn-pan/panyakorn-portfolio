@@ -1,0 +1,152 @@
+// ==========================================================================
+// Panyakorn Singhadoung — Hall of Frame project data
+// แหล่งข้อมูลกลาง ใช้ทั้งในหน้า portfolio.html (การ์ดรายการ) และ project.html (หน้ารายละเอียด)
+// เพิ่มผลงานใหม่: คัดลอกก้อน { ... } ด้านล่างสักก้อน แล้วแก้ค่าให้เป็นผลงานของคุณ
+// images: ใส่ path รูปได้กี่รูปก็ได้ รูปแรกจะถูกใช้เป็นภาพปกในหน้า Hall of Frame
+// paper: (ไม่บังคับ) path ไปยังไฟล์ PDF เช่น 'files/papers/xxx.pdf' ถ้าใส่ไว้จะมีปุ่ม "View Paper" โผล่ขึ้นในหน้ารายละเอียด ถ้าไม่มีก็ไม่ต้องใส่ฟิลด์นี้เลย
+// group: กลุ่มสำหรับปุ่มกรองในหน้า Hall of Frame ใส่ค่าใดค่าหนึ่ง 'mainframe' (งานหลักด้านหุ่นยนต์/AI/วิศวะ) หรือ 'other-skills' (ความสามารถอื่นๆ เช่น ดนตรี กีฬา ขับรถ) — ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ในหน้า Hall of Frame เลย (ไม่มีแท็บ "All" ให้แสดงรวมแล้ว)
+// ==========================================================================
+
+const PROJECTS = [
+  {
+    slug: 'csv-chatbot',
+    title: '7th International Workshop on Artificial Intelligence and Education (WAIE 2025)',
+    category: 'Conference',
+    group: 'mainframe',
+    date: 'วันที่ 27-29 ธันวาคม 2025, Yokohama, Japan',
+    description: 'พัฒนาระบบค้นหาข้อมูลจากไฟล์ CSV โดยใช้ภาษาธรรมชาติ (Natural Language) ผ่าน Chatbot เพื่อช่วยให้การค้นหาข้อมูลเป็นเรื่องง่ายเหมือนพูดคุยกับผู้ช่วย',
+    award: 'ได้รับ Certificate of Appreciation — งานวิจัยด้าน Chatbot<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025)  ในหัวข้อ Interacting with Student Information on Google Sheets Using the RAG Technique<br><em>ผลงานและงานวิจัยนี้ได้รับการรับรองและสนับสนุนโดย IEEE ร่วมกับเครือข่ายมหาวิทยาลัยและสถาบันวิจัยชั้นนำระดับนานาชาติจากญี่ปุ่น สหรัฐอเมริกา และฮ่องกง ได้แก่ Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield และ Hokkaido University of Science</em>',
+    paper: 'files/papers/waie2025-rag-paper.pdf',
+    images: [
+      'images/projects/WAIE2025/1.jpg',
+      'images/projects/WAIE2025/2.jpg',
+      'images/projects/WAIE2025/3.jpg',
+      'images/projects/WAIE2025/4.jpg',
+      'images/projects/WAIE2025/5.jpg',
+      'images/projects/WAIE2025/6.jpg'
+    ]
+  },
+  {
+    slug: 'robot-arm-3dprint',
+    title: 'การประชุมวิชาการระดับชาติ ด้านนวิตักรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024) ',
+    category: 'Conference',
+    group: 'mainframe',
+    date: 'วันที่ 21–23 มีนาคม 2024 · Amari Hotel, Pattaya, Thailand',
+    description: 'พัฒนาชุดแขนหุ่นยนต์ต้นทุนต่ำด้วยเครื่องพิมพ์ 3 มิติ เพื่อสนับสนุนการเรียนรู้ด้าน Robotics ให้เข้าถึงได้ง่ายขึ้น รับผิดชอบตำแหน่ง Head of Hardware Development',
+    award: 'Certificate of Appreciation — จาก รศ.ดร.ธเนศ ธนิตย์ธีรพันธ์ คณบดีคณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี มจธ. งานประชุมวิชาการระดับชาติด้านนวัตกรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024)',
+    paper: 'files/papers/NCLIST2024.pdf',
+    images: [
+      'images/projects/NCLIST2024/1.jpg',
+      'images/projects/NCLIST2024/2.jpg',
+      'images/projects/NCLIST2024/3.jpg',
+      'images/projects/NCLIST2024/4.jpg',
+      'images/projects/NCLIST2024/5.jpg',
+      'images/projects/NCLIST2024/6.jpg',
+      'images/projects/NCLIST2024/7.jpg',
+      'images/projects/NCLIST2024/8.jpg',
+      'images/projects/NCLIST2024/9.jpg',
+      'images/projects/NCLIST2024/10.jpg'
+    ]
+  },
+  {
+    slug: 'home-service-robot',
+    title: 'Thailand Open ROS and Smart Robot Competition 2024' ,
+    category: 'competition',
+    group: 'mainframe',
+    date: 'วันที่ 30–31 มีนาคม 2024 · Paradise Park, Bangkok, Thailand',
+    description: 'พัฒนาหุ่นยนต์จำลองการทำงานช่วยเหลือมนุษย์ในบ้าน ภารกิจ Carry My Luggage และ Find My Mate ท่ามกลางข้อจำกัดด้านเวลาและทรัพยากร ผ่านเข้ารอบ 24 ทีมจากทั้งหมด 93 ทีม (สายรุ่นมัธยมมีเพียง 4 ทีม)',
+    award: 'รองชนะเลิศอันดับที่ 1 — Thailand Open ROS and Smart Robot Competition 2024',
+    paper: 'files/papers/Description-Paper-@home-education.pdf',
+    images: [
+      'images/projects/@Home-education/1.jpg',
+      'images/projects/@Home-education/2.jpg',
+      'images/projects/@Home-education/3.jpg',
+      'images/projects/@Home-education/4.jpg',
+      'images/projects/@Home-education/5.jpg',
+      'images/projects/@Home-education/6.jpg',
+      'images/projects/@Home-education/7.jpg',
+      'images/projects/@Home-education/8.jpg',
+      'images/projects/@Home-education/9.jpg',
+      'images/projects/@Home-education/10.jpg',
+      'images/projects/@Home-education/11.jpg',
+      'images/projects/@Home-education/12.jpg',
+      'images/projects/@Home-education/13.jpg',
+      'images/projects/@Home-education/14.jpg',
+      'images/projects/@Home-education/15.jpg'
+    ]
+  },
+  {
+    slug: 'sorter-robot',
+    title: 'การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชน ระดับชาติ (Innovedex2026)',
+    category: 'competition',
+    group: 'mainframe',
+    date: 'วันที่ 4–5 กรกฎาคม 2026 · Zeer Rangsit, Pathum Thani, Thailand',
+    description: 'ออกแบบ สร้าง และเขียนโปรแกรมควบคุมหุ่นยนต์อัตโนมัติแบบไม่เคลื่อนที่ ในศูนย์คัดแยกสินค้าจำลอง เพื่อขนย้ายและคัดแยกวัตถุตามประเภทที่กำหนด',
+    award: 'เหรียญทอง — การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนระดับชาติ (Innovedex 2026)',
+    images: [
+      'images/projects/innovedex-2026-fn/1.jpg',
+      'images/projects/innovedex-2026-fn/2.jpg',
+      'images/projects/innovedex-2026-fn/3.jpg',
+      'images/projects/innovedex-2026-fn/4.jpg',
+      'images/projects/innovedex-2026-fn/5.jpg',
+      'images/projects/innovedex-2026-fn/6.jpg',
+      'images/projects/innovedex-2026-fn/7.jpg',
+      'images/projects/innovedex-2026-fn/8.jpg'
+    ]
+  },
+  {
+    slug: 'innovedex-regional',
+    title: 'การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชน — รอบภาคกลางและภาคตะวันออก (Innovedex2026)',
+    category: 'competition',
+    group: 'mainframe',
+    date: '',
+    description: 'เข้าร่วมการแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนในรอบคัดเลือกระดับภาค',
+    award: 'ได้คะแนนระดับเหรียญทอง — ในรอบคัดเลือกภาคกลางและภาคตะวันออก (Innovedex)',
+    images: [
+      'images/projects/innovedex-2026-regional/1.jpg',
+      'images/projects/innovedex-2026-regional/2.jpg',
+      'images/projects/innovedex-2026-regional/3.jpg',
+      'images/projects/innovedex-2026-regional/4.jpg',
+      'images/projects/innovedex-2026-regional/5.jpg'
+    ]
+  },
+  {
+    slug: 'educate',
+    title: 'อบรมการขับรถแข่งกับทาง HGR Academy',
+    category: 'educate',
+    group: 'mainframe',
+    date: 'วันที่ 26 กุมภาพันธ์ 2026 · Bira Circuit, Pattaya, Thailand',
+    description: 'เข้าอบรมการขับรถแข่งในหลักสูตร level1 อบรมทั้งความรู้ในด้านทฤษฎีและการปฏิบัติ เพื่อเพิ่มความสามารถและความปลอดภัยในการขับขี่',
+    award: 'เข้าอบรมการขับรถแข่งเพื่อปูรากฐานความรู้ ทักษะ และกระบวนการคิดขั้นสูงอย่างเป็นระบบ เน้นการเปลี่ยนผ่านทฤษฎีสู่นวัตกรรมและการประยุกต์ใช้จริงในระดับมืออาชีพ โดยได้เรียนรู้ผ่านโครงสร้างการเรียนรู้แบบผสม ที่ครอบคลุมทั้งกรอบความคิด เครื่องมือเชิงเทคนิค และการแก้ปัญหาเชิงโครงสร้าง<br><em>โดยหัวข้อเนื้อหาในหลักสูตรจะประกอบด้วย<br><em>1.1 Principles of Domain Mastery: ทำความเข้าใจโครงสร้างพื้นฐาน แนวคิดหลัก และระบบนิเวศขององค์ความรู้<br><em>1.2 Analytical & First-Principles Thinking: กระบวนการวิเคราะห์ปัญหาจากฐานรากและการคิดเชิงระบบ<br><em>1.3 Strategic Goal Setting & Execution Framework: การตั้งเป้าหมายเชิงกลยุทธ์และการบริหารจัดการทรัพยากรอย่างมีประสิทธิภาพ',
+    images: [
+      'images/projects/HGR-Academy/1.jpg',
+      'images/projects/HGR-Academy/2.jpg',
+      'images/projects/HGR-Academy/3.jpg',
+      'images/projects/HGR-Academy/4.jpg',
+      'images/projects/HGR-Academy/5.jpg',
+      'images/projects/HGR-Academy/6.jpg'
+    ]
+  },
+  {
+    slug: 'other-skills-music',
+    title: 'Music',
+    category: 'Other Skills',
+    group: 'other-skills',
+    date: '',
+    description: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    images: [
+      'images/projects/other-skills-music/1.jpg'
+    ]
+  },
+  {
+    slug: 'other-skills-sports',
+    title: 'Sports',
+    category: 'Other Skills',
+    group: 'other-skills',
+    date: '',
+    description: 'ตัวจริงเข้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    images: [
+      'images/projects/other-skills-sports/1.jpg'
+    ]
+  },
+];

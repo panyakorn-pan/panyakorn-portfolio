@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project | Panyakorn Singhadoung</title>
+<meta name="description" content="รายละเอียดผลงานของ ปัณยกร สิงห์ดวง">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2212%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>PS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="navbar__inner container">
+    <a href="index.html" class="navbar__brand">
+      <span class="logo-mark">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+          <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" stroke-width="2"/>
+          <path d="M24 4V24M24 24L42 14M24 24L6 14M24 24V44" stroke-width="2"/>
+        </svg>
+      </span>
+      PANYAKORN
+    </a>
+    <nav class="navbar__nav" id="navMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link active">Hall of Frame</a>
+      <a href="about.html" class="nav-link">My Profile</a>
+    </nav>
+    <button class="navbar__toggle" id="navToggle" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="container page-header">
+    <p class="page-header__eyebrow reveal" id="projectCategory">Project</p>
+    <h1 class="page-header__title reveal" id="projectTitle">Project title</h1>
+    <p class="page-header__desc reveal" id="projectMeta"></p>
+  </div>
+
+  <section class="container section">
+    <div class="project-detail__grid">
+      <div class="project-slider-wrap">
+        <div class="project-slider" id="projectSlider">
+          <div class="project-slider__track" id="sliderTrack"></div>
+          <button type="button" class="project-slider__btn project-slider__btn--prev" id="sliderPrev" aria-label="รูปก่อนหน้า">‹</button>
+          <button type="button" class="project-slider__btn project-slider__btn--next" id="sliderNext" aria-label="รูปถัดไป">›</button>
+          <div class="project-slider__dots" id="sliderDots"></div>
+        </div>
+        <div class="project-slider__thumbs" id="sliderThumbs"></div>
+      </div>
+      <div class="project-detail__info">
+        <p class="project-detail__desc" id="projectDesc"></p>
+        <div class="project-award" id="projectAward"></div>
+        <a href="#" class="btn-solid project-paper-btn reveal" id="projectPaperBtn" target="_blank" rel="noopener">View Full Paper</a>
+        <a href="portfolio.html" class="btn-outline project-back reveal">← Back to Hall of Frame</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox">
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+    <button type="button" class="lightbox__btn lightbox__btn--prev" id="lightboxPrev" aria-label="Previous photo">‹</button>
+    <button type="button" class="lightbox__btn lightbox__btn--next" id="lightboxNext" aria-label="Next photo">›</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+</main>
+
+<footer class="footer container">
+  <div class="footer__top">
+    <p class="footer__tagline reveal">
+      You can follow and support me on social media here!
+    </p>
+    <div class="footer__contact reveal">
+      <a href="mailto:hspg.pan@gmail.com" class="contact-item"><img class="contact-icon" src="images/icons/email.png" alt="">hspg.pan@gmail.com</a>
+      <a href="tel:0886600001" class="contact-item"><img class="contact-icon" src="images/icons/phone.png" alt="">088-660-0001</a>
+      <span class="contact-item"><img class="contact-icon" src="images/icons/facebook.png" alt="">Panyakorn Singhadoung</span>
+      <a href="https://instagram.com/pxn_pyk" target="_blank" rel="noopener" class="contact-item"><img class="contact-icon" src="images/icons/instagram.png" alt="">@pxn_pyk</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Panyakorn Singhadoung</span>
+    <span>Built with HTML, CSS &amp; JS</span>
+  </div>
+</footer>
+
+<a href="#" class="scroll-top" id="scrollTop" aria-label="กลับขึ้นบนสุด">↑</a>
+
+<script src="js/projects-data.js"></script>
+<script src="js/project.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

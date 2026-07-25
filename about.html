@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile | Panyakorn Singhadoung</title>
+<meta name="description" content="ประวัติการศึกษา ทักษะ และการอบรมของ ปัณยกร สิงห์ดวง">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2212%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>PS</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="navbar__inner container">
+    <a href="index.html" class="navbar__brand">
+      <span class="logo-mark">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+          <path d="M24 4L42 14V34L24 44L6 34V14L24 4Z" stroke-width="2"/>
+          <path d="M24 4V24M24 24L42 14M24 24L6 14M24 24V44" stroke-width="2"/>
+        </svg>
+      </span>
+      PANYAKORN
+    </a>
+    <nav class="navbar__nav" id="navMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">Hall of Frame</a>
+      <a href="about.html" class="nav-link active">My Profile</a>
+    </nav>
+    <button class="navbar__toggle" id="navToggle" aria-label="เปิดเมนู">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="container page-header">
+    <p class="page-header__eyebrow reveal">My Profile</p>
+    <h1 class="page-header__title reveal">About Me</h1>
+    <p class="page-header__desc reveal">
+      ประวัติการศึกษา ทักษะ และการอบรมที่ผ่านมาของผม
+    </p>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="container section">
+    <h2 class="section__title reveal">Introduction</h2>
+    <div class="about__grid">
+      <p class="about__text reveal">
+        &emsp;&emsp;&emsp;ผม<strong>ปัณยกร สิงห์ดวง</strong> ชอบการเรียนรู้ในสิ่งใหม่ๆที่ไม่เคยลอง และชอบในการลงมือต่างๆด้วยตัวเอง
+        ผมมีประสบการณ์จากการนำเสนองานวิจัยในงานระดับนานาชาติ การแข่งขันระดับประเทศและภูมิภาค
+        ความหลงไหลในรถยนต์คืออีกหนึ่งสิ่งที่ผมมี ผมเคยเข้าร่วมการอบรมการขับรถแข่ง และอบรมการซ่อมแอร์รถยนต์
+        มีประสบการณ์การทำงานในอู่รถจริงๆ และได้ลงมือทำจริงๆ ขอเล่าเรื่องวัยเด็กของผมให้ฟังสักหน่อยครับ ก่อนจะเดินทางมาถึงตรงนี้
+      </p>
+
+      <div class="edu-timeline reveal">
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-info">
+            <span class="edu-level">Primary School [P1-6]</span>
+            <h4>Wansawangchit School</h4>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-info">
+            <span class="edu-level">Secondary School [M1-6]</span>
+            <h4>The Demonstration School of Bansomdejchaopraya Rajabhat University</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Childhood story -->
+  <section id="childhood" class="container section">
+    <div class="childhood__grid">
+      <div class="childhood__media reveal">
+        <div class="media-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
+          <p>[Edit here: add photos at images/Auto-slide/1.jpg and images/Auto-slide/2.jpg (add more Auto-slide/3.jpg etc. if you want), then uncomment the &lt;img&gt; tags below instead of this placeholder — they will fade through automatically]</p>
+        </div>
+        <!-- When ready to add photos: delete the div.media-placeholder above, then uncomment the lines below (add more childhood-slide <img> lines for more photos) -->
+        <img src="images/Auto-slide/1.jpg" alt="Panyakorn's childhood" class="childhood-slide is-active">
+        <img src="images/Auto-slide/2.jpg" alt="Panyakorn's childhood" class="childhood-slide">
+      </div>
+      <p class="childhood__text reveal">
+        &emsp;&emsp;&emsp;&emsp;ตั้งแต่เด็กผมเดินทางไปไหนมาไหนกับพ่ออยู่บ่อยๆ เวลานั่งรถพ่อชอบชี้ให้ดูรถต่างๆที่ขับผ่านไปมา และบอกชื่อรุ่นให้ฟัง
+        มันคือจุดเล็กๆที่ทำให้ผมเริ่มมีความสนใจในรถขึ้นมาแบบไม่รู้ตัว พอเริ่มโตขึ้นพ่อผมก็ได้สอนการขับรถให้ผมพอได้ลองลงมือทำจริง
+        มันทำให้ผมเกิดความอยากรู้ว่าสิ่งต่างๆรอบตัวทำงานยังไง ผมเริ่มจาการรื้อและซ่อมรถบังคับของผมเอง ผมรู้สึกสนุกและตื่นเต้นไปในตัว
+        จนผมรู้ว่าผมชอบอะไรและมีความฝันว่าอยากทำอะไร ผมโชคดีที่มีคนรู้จักทำการเกี่ยวกับรถ ทำให้ผมได้มีโอกาสไปเรียนรู้และได้ลงมือทำแบบจริงๆ
+        ผมได้ลองถูกลองผิด และได้ลองในสิ่งที่ไม่เคยและไม่กล้าลอง มันทำให้ผมรู้ว่าบางทีการได้ทำอะไรใหม่ๆก็ไม่ได้น่ากลัวอย่างที่คิด
+        แน่นอนว่าทุกอย่างจะไม่ราบรื่นขนาดนี้ถ้าไม่ได้การซัพพอร์ตจากครอบครัวและคนรอบข้างของผม ทั้งหมดนี้คือสิ่งที่ทำให้ผมเป็นผมในทุกวันนี้ครับ 
+    </div>
+  </section>
+  <a href="index.html" class="btn-outline about-back-btn">← Back to Home</a>
+</main>
+
+<footer class="footer container">
+  <div class="footer__top">
+    <p class="footer__tagline reveal">
+      You can follow and support me on social media here!
+    </p>
+    <div class="footer__contact reveal">
+      <a href="mailto:hspg.pan@gmail.com" class="contact-item"><img class="contact-icon" src="images/icons/email.png" alt="">hspg.pan@gmail.com</a>
+      <a href="tel:0886600001" class="contact-item"><img class="contact-icon" src="images/icons/phone.png" alt="">088-660-0001</a>
+      <span class="contact-item"><img class="contact-icon" src="images/icons/facebook.png" alt="">Panyakorn Singhadoung</span>
+      <a href="https://instagram.com/pxn_pyk" target="_blank" rel="noopener" class="contact-item"><img class="contact-icon" src="images/icons/instagram.png" alt="">@pxn_pyk</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Panyakorn Singhadoung</span>
+    <span>Built with HTML, CSS &amp; JS</span>
+  </div>
+</footer>
+
+<a href="#" class="scroll-top" id="scrollTop" aria-label="กลับขึ้นบนสุด">↑</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
