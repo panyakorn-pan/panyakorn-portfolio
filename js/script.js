@@ -8,7 +8,7 @@
 // (ถ้าโค้ดนี้พัง ลิงก์ก็ยังกดได้ปกติ แค่ไม่มีจังหวะม่าน)
 // ==========================================================================
 (() => {
-  const EXIT_MS = 320;                 // ต้องเท่ากับ curtainIn ใน css/style.css
+  const EXIT_MS = 420;                 // ต้องเท่ากับ curtainIn ใน css/style.css
 
   // กลับมาหน้านี้ด้วยปุ่ม back ของเบราว์เซอร์ ต้องเอาม่านออก ไม่ให้จอดำค้าง
   window.addEventListener('pageshow', () => document.body.classList.remove('is-leaving'));
