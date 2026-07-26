@@ -144,15 +144,15 @@ const PROJECTS = [
     ]
   },
   {
-    slug: 'educate',
+    slug: 'carair',
     title: 'อบรมในหลักสูตรช่างแอร์รถยนต์',
     category: 'educate',
     group: 'mainframe',
     date: 'วันที่ 26 กุมภาพันธ์ 2026 · Bira Circuit, Pattaya, Thailand',
     description: 'เข้าอบรมในหลักสูตรการซ่อมแอร์รถยนต์ โดยเริ่มปูตั่งแต่พื้นฐานทั้งในด้านทฤษฎีและปฏิบัติจริง รวมไปถึงการคำนวณราคาและค่าแรง',
     descriptionEn: 'Attended training course on car air conditioner repair, starting from the basics in both theory and hands-on practice, including how to calculate prices and labor costs',
-    award: 'เข้าอบรมการขับรถแข่งเพื่อปูรากฐานความรู้ ทักษะ และกระบวนการคิดขั้นสูงอย่างเป็นระบบ เน้นการเปลี่ยนผ่านทฤษฎีสู่นวัตกรรมและการประยุกต์ใช้จริงในระดับมืออาชีพ โดยได้เรียนรู้ผ่านโครงสร้างการเรียนรู้แบบผสม ที่ครอบคลุมทั้งกรอบความคิด เครื่องมือเชิงเทคนิค และการแก้ปัญหาเชิงโครงสร้าง<br><em>โดยหัวข้อเนื้อหาในหลักสูตรจะประกอบด้วย<br><em>1.1 Principles of Domain Mastery: ทำความเข้าใจโครงสร้างพื้นฐาน แนวคิดหลัก และระบบนิเวศขององค์ความรู้<br><em>1.2 Analytical & First-Principles Thinking: กระบวนการวิเคราะห์ปัญหาจากฐานรากและการคิดเชิงระบบ<br><em>1.3 Strategic Goal Setting & Execution Framework: การตั้งเป้าหมายเชิงกลยุทธ์และการบริหารจัดการทรัพยากรอย่างมีประสิทธิภาพ',
-    awardEn: 'Attended race driving training to build a systematic foundation of knowledge, skills, and advanced thinking processes, with an emphasis on turning theory into innovation and real-world professional application. The course used a blended learning structure covering mindset, technical tools, and structural problem-solving.<br><em>The curriculum covered the following topics:<br><em>1.1 Principles of Domain Mastery: understanding the underlying structures, core concepts, and ecosystem of the field<br><em>1.2 Analytical &amp; First-Principles Thinking: analysing problems from first principles and thinking in systems<br><em>1.3 Strategic Goal Setting &amp; Execution Framework: setting strategic goals and managing resources effectively',
+    award: 'ได้เข้าร่อมอบรมในหลักสูตรช่างแอร์รถยนต์ เป็นเวลา 30 ชั่วโมง โดยเริ่มปูตั่งแต่พื้นฐานทั้งในด้านทฤษฎีและปฏิบัติจริง รวมไปถึงการคำนวณราคาและค่าแรง เพื่อสามารถนำไปต่อยอดในอนาคตต่อไปได้',
+    awardEn: 'Attended a 30-hour training course on car air conditioner repair, starting from the basics in both theory and hands-on practice, including how to calculate prices and labor costs, in order to build on this knowledge in the future',
     images: [
       'images/projects/training-course-on-car-air/1.jpg',
       'images/projects/training-course-on-car-air/2.jpg',
