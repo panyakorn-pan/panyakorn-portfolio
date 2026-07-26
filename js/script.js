@@ -45,12 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const langSwitch = document.getElementById('langSwitch');
   if (langSwitch) {
     const applyLang = (lang, isInitial) => {
-      document.querySelectorAll('[data-lang]').forEach((el) => {
-        const show = el.dataset.lang === lang;
-        el.classList.toggle('lang-hidden', !show);
-        // ตอนกดสลับภาษา ต้องบังคับให้เห็นเลย เพราะ reveal observer ไม่จับ element ที่เคยถูกซ่อน
-        if (show && !isInitial) el.classList.add('visible');
-      });
+      // การซ่อน/แสดงข้อความ ทำโดย CSS ผ่านค่านี้ (ดู [data-lang] ใน css/style.css)
+      document.documentElement.dataset.activeLang = lang;
+      // ตอนกดสลับภาษา ต้องบังคับให้เห็นเลย เพราะ reveal observer ไม่จับ element ที่เคยถูกซ่อนอยู่
+      if (!isInitial) {
+        document.querySelectorAll('[data-lang="' + lang + '"]').forEach((el) => {
+          el.classList.add('visible');
+        });
+      }
       langSwitch.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.setLang === lang);
       });

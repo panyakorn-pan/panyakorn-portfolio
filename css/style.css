@@ -235,8 +235,13 @@ a { color: inherit; text-decoration: none; }
 .lang-btn.active { background: var(--text); color: #000; }
 /* ในหน้ารายละเอียดผลงาน ปุ่มอยู่บนสุดของคอลัมน์ขวาอยู่แล้ว ไม่ต้องเว้นบนซ้ำ */
 .project-detail__info .lang-switch { margin-top: 0; align-self: flex-start; }
-/* ซ่อนข้อความภาษาที่ไม่ได้เลือก */
-[data-lang].lang-hidden { display: none; }
+/* ---- การซ่อน/แสดงข้อความตามภาษา ----
+   คุมด้วย CSS ล้วน โดยอ่านจาก data-active-lang ที่แท็ก <html>
+   ทำแบบนี้เพราะ: ถ้ารอให้ JS มาซ่อน แล้ว JS โหลดช้าหรือเบราว์เซอร์ยังใช้ไฟล์เก่าที่แคชไว้
+   ข้อความจะโผล่ทั้ง 2 ภาษาพร้อมกัน (อาการ "รวน") — วิธีนี้ซ่อนไว้ตั้งแต่แรกเสมอ ไม่ต้องรอ JS */
+[data-lang] { display: none; }
+html[data-active-lang="th"] [data-lang="th"] { display: block; }
+html[data-active-lang="en"] [data-lang="en"] { display: block; }
 /* ลดระยะห่างระหว่างปุ่มเปลี่ยนภาษา กับหัวข้อ Introduction ที่อยู่ถัดลงมา
    (เจาะจงเฉพาะ #about ในหน้า My Profile — ไม่กระทบ section อื่นในเว็บ) */
 #about { padding-top: 24px; }
