@@ -54,8 +54,14 @@
         <div class="project-slider__thumbs" id="sliderThumbs"></div>
       </div>
       <div class="project-detail__info">
-        <p class="project-detail__desc" id="projectDesc"></p>
-        <div class="project-award" id="projectAward"></div>
+        <!-- ปุ่มเปลี่ยนภาษา TH / EN — มีผลกับ "รายละเอียดงาน" กับ "รางวัล" ด้านล่างนี้
+             ส่วนชื่องาน กับวันที่ จะแสดงตามที่พิมพ์ไว้ใน js/projects-data.js เสมอ ไม่สลับภาษา -->
+        <div class="lang-switch" id="langSwitch">
+          <button type="button" class="lang-btn" data-set-lang="th">TH</button>
+          <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        </div>
+        <div id="projectDesc"></div>
+        <div id="projectAward"></div>
         <a href="#" class="btn-solid project-paper-btn reveal" id="projectPaperBtn" target="_blank" rel="noopener">View Full Paper</a>
         <a href="portfolio.html" class="btn-outline project-back reveal">← Back to Hall of Frame</a>
       </div>

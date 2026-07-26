@@ -5,6 +5,10 @@
 // images: ใส่ path รูปได้กี่รูปก็ได้ รูปแรกจะถูกใช้เป็นภาพปกในหน้า Hall of Frame
 // paper: (ไม่บังคับ) path ไปยังไฟล์ PDF เช่น 'files/papers/xxx.pdf' ถ้าใส่ไว้จะมีปุ่ม "View Paper" โผล่ขึ้นในหน้ารายละเอียด ถ้าไม่มีก็ไม่ต้องใส่ฟิลด์นี้เลย
 // group: กลุ่มสำหรับปุ่มกรองในหน้า Hall of Frame ใส่ค่าใดค่าหนึ่ง 'mainframe' (งานหลักด้านหุ่นยนต์/AI/วิศวะ) หรือ 'other-skills' (ความสามารถอื่นๆ เช่น ดนตรี กีฬา ขับรถ) — ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ในหน้า Hall of Frame เลย (ไม่มีแท็บ "All" ให้แสดงรวมแล้ว)
+// description / descriptionEn: รายละเอียดงาน 2 ภาษา (ไทย / อังกฤษ)
+// award / awardEn: รางวัล 2 ภาษา (ไทย / อังกฤษ) — ใส่ <br> กับ <em> ได้
+//   สองคู่นี้คือจุดที่สลับภาษาได้ ส่วน title (ชื่องาน) กับ date (วันที่) จะแสดงตามที่พิมพ์ไว้เสมอ ไม่สลับภาษา
+//   ถ้าไม่ใส่ descriptionEn / awardEn จะใช้ข้อความภาษาไทยแสดงทั้งสองภาษา
 // ==========================================================================
 
 const PROJECTS = [
@@ -15,7 +19,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: 'วันที่ 27-29 ธันวาคม 2025, Yokohama, Japan',
     description: 'พัฒนาระบบค้นหาข้อมูลจากไฟล์ CSV โดยใช้ภาษาธรรมชาติ (Natural Language) ผ่าน Chatbot เพื่อช่วยให้การค้นหาข้อมูลเป็นเรื่องง่ายเหมือนพูดคุยกับผู้ช่วย',
+    descriptionEn: 'Developed a system for searching data in CSV files using natural language through a chatbot, making data lookup as easy as talking to an assistant.',
     award: 'ได้รับ Certificate of Appreciation — งานวิจัยด้าน Chatbot<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025)  ในหัวข้อ Interacting with Student Information on Google Sheets Using the RAG Technique<br><em>ผลงานและงานวิจัยนี้ได้รับการรับรองและสนับสนุนโดย IEEE ร่วมกับเครือข่ายมหาวิทยาลัยและสถาบันวิจัยชั้นนำระดับนานาชาติจากญี่ปุ่น สหรัฐอเมริกา และฮ่องกง ได้แก่ Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield และ Hokkaido University of Science</em>',
+    awardEn: 'Received a Certificate of Appreciation — Chatbot research<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025), on the topic "Interacting with Student Information on Google Sheets Using the RAG Technique"<br><em>This work and research was endorsed and supported by IEEE, together with a network of leading international universities and research institutes from Japan, the United States, and Hong Kong — namely Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield, and Hokkaido University of Science</em>',
     paper: 'files/papers/waie2025-rag-paper.pdf',
     images: [
       'images/projects/WAIE2025/1.jpg',
@@ -33,7 +39,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: 'วันที่ 21–23 มีนาคม 2024 · Amari Hotel, Pattaya, Thailand',
     description: 'พัฒนาชุดแขนหุ่นยนต์ต้นทุนต่ำด้วยเครื่องพิมพ์ 3 มิติ เพื่อสนับสนุนการเรียนรู้ด้าน Robotics ให้เข้าถึงได้ง่ายขึ้น รับผิดชอบตำแหน่ง Head of Hardware Development',
+    descriptionEn: 'Developed a low-cost robotic arm kit using 3D printing to make robotics education more accessible. Served as Head of Hardware Development.',
     award: 'Certificate of Appreciation — จาก รศ.ดร.ธเนศ ธนิตย์ธีรพันธ์ คณบดีคณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี มจธ. งานประชุมวิชาการระดับชาติด้านนวัตกรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024)',
+    awardEn: 'Certificate of Appreciation — presented by Assoc. Prof. Dr. Tanes Tanitteerapan, Dean of the Faculty of Industrial Education and Technology, KMUTT, at the 4th National Conference on Learning Innovation in Science and Technology (NCLIST 2024)',
     paper: 'files/papers/NCLIST2024.pdf',
     images: [
       'images/projects/NCLIST2024/1.jpg',
@@ -55,7 +63,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: 'วันที่ 30–31 มีนาคม 2024 · Paradise Park, Bangkok, Thailand',
     description: 'พัฒนาหุ่นยนต์จำลองการทำงานช่วยเหลือมนุษย์ในบ้าน ภารกิจ Carry My Luggage และ Find My Mate ท่ามกลางข้อจำกัดด้านเวลาและทรัพยากร ผ่านเข้ารอบ 24 ทีมจากทั้งหมด 93 ทีม (สายรุ่นมัธยมมีเพียง 4 ทีม)',
+    descriptionEn: 'Developed a robot simulating in-home human assistance for the Carry My Luggage and Find My Mate missions, working under tight time and resource constraints. Advanced to the final 24 teams out of 93, of which only 4 were high-school teams.',
     award: 'รองชนะเลิศอันดับที่ 1 — Thailand Open ROS and Smart Robot Competition 2024',
+    awardEn: '1st Runner-up — Thailand Open ROS and Smart Robot Competition 2024',
     paper: 'files/papers/Description-Paper-@home-education.pdf',
     images: [
       'images/projects/@Home-education/1.jpg',
@@ -82,7 +92,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: 'วันที่ 4–5 กรกฎาคม 2026 · Zeer Rangsit, Pathum Thani, Thailand',
     description: 'ออกแบบ สร้าง และเขียนโปรแกรมควบคุมหุ่นยนต์อัตโนมัติแบบไม่เคลื่อนที่ ในศูนย์คัดแยกสินค้าจำลอง เพื่อขนย้ายและคัดแยกวัตถุตามประเภทที่กำหนด',
+    descriptionEn: 'Designed, built, and programmed a stationary autonomous robot for a simulated sorting facility, moving and sorting objects by their assigned category.',
     award: 'เหรียญทอง — การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนระดับชาติ (Innovedex 2026)',
+    awardEn: 'Gold Medal — National Youth Autonomous Robotics and Artificial Intelligence Competition (Innovedex 2026)',
     images: [
       'images/projects/innovedex-2026-fn/1.jpg',
       'images/projects/innovedex-2026-fn/2.jpg',
@@ -101,7 +113,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: '',
     description: 'เข้าร่วมการแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนในรอบคัดเลือกระดับภาค',
+    descriptionEn: 'Competed in the regional qualifying round of the Youth Autonomous Robotics and Artificial Intelligence Competition.',
     award: 'ได้คะแนนระดับเหรียญทอง — ในรอบคัดเลือกภาคกลางและภาคตะวันออก (Innovedex)',
+    awardEn: 'Achieved a gold-medal-level score — Central and Eastern regional qualifying round (Innovedex)',
     images: [
       'images/projects/innovedex-2026-regional/1.jpg',
       'images/projects/innovedex-2026-regional/2.jpg',
@@ -117,7 +131,9 @@ const PROJECTS = [
     group: 'mainframe',
     date: 'วันที่ 26 กุมภาพันธ์ 2026 · Bira Circuit, Pattaya, Thailand',
     description: 'เข้าอบรมการขับรถแข่งในหลักสูตร level1 อบรมทั้งความรู้ในด้านทฤษฎีและการปฏิบัติ เพื่อเพิ่มความสามารถและความปลอดภัยในการขับขี่',
+    descriptionEn: 'Attended a Level 1 race driving course covering both theory and hands-on practice, to improve driving skill and safety.',
     award: 'เข้าอบรมการขับรถแข่งเพื่อปูรากฐานความรู้ ทักษะ และกระบวนการคิดขั้นสูงอย่างเป็นระบบ เน้นการเปลี่ยนผ่านทฤษฎีสู่นวัตกรรมและการประยุกต์ใช้จริงในระดับมืออาชีพ โดยได้เรียนรู้ผ่านโครงสร้างการเรียนรู้แบบผสม ที่ครอบคลุมทั้งกรอบความคิด เครื่องมือเชิงเทคนิค และการแก้ปัญหาเชิงโครงสร้าง<br><em>โดยหัวข้อเนื้อหาในหลักสูตรจะประกอบด้วย<br><em>1.1 Principles of Domain Mastery: ทำความเข้าใจโครงสร้างพื้นฐาน แนวคิดหลัก และระบบนิเวศขององค์ความรู้<br><em>1.2 Analytical & First-Principles Thinking: กระบวนการวิเคราะห์ปัญหาจากฐานรากและการคิดเชิงระบบ<br><em>1.3 Strategic Goal Setting & Execution Framework: การตั้งเป้าหมายเชิงกลยุทธ์และการบริหารจัดการทรัพยากรอย่างมีประสิทธิภาพ',
+    awardEn: 'Attended race driving training to build a systematic foundation of knowledge, skills, and advanced thinking processes, with an emphasis on turning theory into innovation and real-world professional application. The course used a blended learning structure covering mindset, technical tools, and structural problem-solving.<br><em>The curriculum covered the following topics:<br><em>1.1 Principles of Domain Mastery: understanding the underlying structures, core concepts, and ecosystem of the field<br><em>1.2 Analytical &amp; First-Principles Thinking: analysing problems from first principles and thinking in systems<br><em>1.3 Strategic Goal Setting &amp; Execution Framework: setting strategic goals and managing resources effectively',
     images: [
       'images/projects/HGR-Academy/1.jpg',
       'images/projects/HGR-Academy/2.jpg',
@@ -134,6 +150,7 @@ const PROJECTS = [
     group: 'other-skills',
     date: '',
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
       'images/projects/other-skills-music/1.jpg'
     ]
@@ -145,6 +162,7 @@ const PROJECTS = [
     group: 'other-skills',
     date: '',
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
       'images/projects/other-skills-sports/1.jpg'
     ]

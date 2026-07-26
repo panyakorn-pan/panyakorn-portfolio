@@ -40,6 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Language switch (TH / EN) — สลับข้อความที่มี data-lang="th" / data-lang="en"
+  // ต้องทำงานก่อน reveal observer ด้านล่าง เพื่อไม่ให้ไปจับข้อความภาษาที่ถูกซ่อนอยู่
+  const langSwitch = document.getElementById('langSwitch');
+  if (langSwitch) {
+    const applyLang = (lang, isInitial) => {
+      document.querySelectorAll('[data-lang]').forEach((el) => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-hidden', !show);
+        // ตอนกดสลับภาษา ต้องบังคับให้เห็นเลย เพราะ reveal observer ไม่จับ element ที่เคยถูกซ่อน
+        if (show && !isInitial) el.classList.add('visible');
+      });
+      langSwitch.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      localStorage.setItem('siteLang', lang);
+    };
+    langSwitch.querySelectorAll('.lang-btn').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.setLang, false));
+    });
+    applyLang(localStorage.getItem('siteLang') || 'th', true);
+  }
+
   // Scroll reveal animation
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver(

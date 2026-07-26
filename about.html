@@ -36,23 +36,39 @@
 </header>
 
 <main>
-  <div class="container page-header">
+  <div class="container page-header page-header--tight">
     <p class="page-header__eyebrow reveal">My Profile</p>
     <h1 class="page-header__title reveal">About Me</h1>
-    <p class="page-header__desc reveal">
+    <p class="page-header__desc reveal" data-lang="th">
       ประวัติการศึกษา ทักษะ และการอบรมที่ผ่านมาของผม
     </p>
+    <p class="page-header__desc reveal" data-lang="en">
+      My education, skills, and the training I've been through
+    </p>
+
+    <!-- ปุ่มเปลี่ยนภาษา TH / EN -->
+    <div class="lang-switch reveal" id="langSwitch">
+      <button type="button" class="lang-btn" data-set-lang="th">TH</button>
+      <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+    </div>
   </div>
 
   <!-- About -->
   <section id="about" class="container section">
     <h2 class="section__title reveal">Introduction</h2>
     <div class="about__grid">
-      <p class="about__text reveal">
+      <p class="about__text reveal" data-lang="th">
         &emsp;&emsp;&emsp;ผม<strong>ปัณยกร สิงห์ดวง</strong> ชอบการเรียนรู้ในสิ่งใหม่ๆที่ไม่เคยลอง และชอบในการลงมือต่างๆด้วยตัวเอง
         ผมมีประสบการณ์จากการนำเสนองานวิจัยในงานระดับนานาชาติ การแข่งขันระดับประเทศและภูมิภาค
         ความหลงไหลในรถยนต์คืออีกหนึ่งสิ่งที่ผมมี ผมเคยเข้าร่วมการอบรมการขับรถแข่ง และอบรมการซ่อมแอร์รถยนต์
         มีประสบการณ์การทำงานในอู่รถจริงๆ และได้ลงมือทำจริงๆ ขอเล่าเรื่องวัยเด็กของผมให้ฟังสักหน่อยครับ ก่อนจะเดินทางมาถึงตรงนี้
+      </p>
+      <p class="about__text reveal" data-lang="en">
+        &emsp;&emsp;&emsp;I'm <strong>Panyakorn Singhadoung</strong>. I love learning things I've never tried before,
+        and I enjoy getting hands-on with everything myself. I have experience presenting research at international
+        conferences, as well as competing at national and regional levels. A passion for cars is another part of who
+        I am — I've attended race driving training and automotive air conditioning repair training, and I've worked
+        hands-on in a real garage. Let me tell you a little about my childhood, before I arrived where I am today.
       </p>
 
       <div class="edu-timeline reveal">
@@ -86,13 +102,26 @@
         <img src="images/Auto-slide/1.jpg" alt="Panyakorn's childhood" class="childhood-slide is-active">
         <img src="images/Auto-slide/2.jpg" alt="Panyakorn's childhood" class="childhood-slide">
       </div>
-      <p class="childhood__text reveal">
+      <p class="childhood__text reveal" data-lang="th">
         &emsp;&emsp;&emsp;&emsp;ตั้งแต่เด็กผมเดินทางไปไหนมาไหนกับพ่ออยู่บ่อยๆ เวลานั่งรถพ่อชอบชี้ให้ดูรถต่างๆที่ขับผ่านไปมา และบอกชื่อรุ่นให้ฟัง
         มันคือจุดเล็กๆที่ทำให้ผมเริ่มมีความสนใจในรถขึ้นมาแบบไม่รู้ตัว พอเริ่มโตขึ้นพ่อผมก็ได้สอนการขับรถให้ผมพอได้ลองลงมือทำจริง
         มันทำให้ผมเกิดความอยากรู้ว่าสิ่งต่างๆรอบตัวทำงานยังไง ผมเริ่มจาการรื้อและซ่อมรถบังคับของผมเอง ผมรู้สึกสนุกและตื่นเต้นไปในตัว
         จนผมรู้ว่าผมชอบอะไรและมีความฝันว่าอยากทำอะไร ผมโชคดีที่มีคนรู้จักทำการเกี่ยวกับรถ ทำให้ผมได้มีโอกาสไปเรียนรู้และได้ลงมือทำแบบจริงๆ
         ผมได้ลองถูกลองผิด และได้ลองในสิ่งที่ไม่เคยและไม่กล้าลอง มันทำให้ผมรู้ว่าบางทีการได้ทำอะไรใหม่ๆก็ไม่ได้น่ากลัวอย่างที่คิด
-        แน่นอนว่าทุกอย่างจะไม่ราบรื่นขนาดนี้ถ้าไม่ได้การซัพพอร์ตจากครอบครัวและคนรอบข้างของผม ทั้งหมดนี้คือสิ่งที่ทำให้ผมเป็นผมในทุกวันนี้ครับ 
+        แน่นอนว่าทุกอย่างจะไม่ราบรื่นขนาดนี้ถ้าไม่ได้การซัพพอร์ตจากครอบครัวและคนรอบข้างของผม ทั้งหมดนี้คือสิ่งที่ทำให้ผมเป็นผมในทุกวันนี้ครับ
+      </p>
+      <p class="childhood__text reveal" data-lang="en">
+        &emsp;&emsp;&emsp;&emsp;Ever since I was little, I often travelled around with my dad. While riding in the car,
+        he liked to point out the cars passing by and tell me their model names. That was the small spark that got me
+        interested in cars without even realising it. As I grew older, my dad taught me how to drive, giving me the
+        chance to actually try it hands-on. It made me curious about how the things around me work. I started by taking
+        apart and repairing my own RC cars — I found it fun and exciting at the same time. That's how I came to know
+        what I love and what I dream of doing. I was lucky to know people who work with cars, which gave me the chance
+        to learn and get real hands-on experience. I got to try, make mistakes, and attempt things I had never done or
+        never dared to do. It taught me that trying something new isn't always as scary as it seems. Of course, none of
+        this would have gone so smoothly without the support of my family and the people around me. All of this is what
+        has made me who I am today.
+      </p>
     </div>
   </section>
   <a href="index.html" class="btn-outline about-back-btn">← Back to Home</a>

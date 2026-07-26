@@ -24,13 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('projectCategory').textContent = project.category;
   document.getElementById('projectTitle').textContent = project.title;
   document.getElementById('projectMeta').textContent = project.date || '';
-  document.getElementById('projectDesc').textContent = project.description || '';
+  // รายละเอียดงาน — สร้างไว้ 2 ภาษา แล้วให้ระบบเปลี่ยนภาษาใน js/script.js สลับให้เอง
+  // (ถ้าไม่ได้ใส่ descriptionEn ไว้ จะใช้ข้อความภาษาไทยแสดงทั้งสองภาษา)
+  const descWrap = document.getElementById('projectDesc');
+  const descTh = project.description || '';
+  const descEn = project.descriptionEn || descTh;
+  [['th', descTh], ['en', descEn]].forEach(([lang, text]) => {
+    const p = document.createElement('p');
+    p.className = 'project-detail__desc';
+    p.dataset.lang = lang;
+    p.textContent = text;
+    descWrap.appendChild(p);
+  });
 
-  const awardEl = document.getElementById('projectAward');
+  // รางวัล — สร้างไว้ 2 ภาษาเหมือนรายละเอียดงาน (ใช้ innerHTML เพราะข้อความมี <br> กับ <em> อยู่ข้างใน)
+  // (ถ้าไม่ได้ใส่ awardEn ไว้ จะใช้ข้อความภาษาไทยแสดงทั้งสองภาษา)
+  const awardWrap = document.getElementById('projectAward');
   if (project.award) {
-    awardEl.innerHTML = project.award;
+    const awardTh = project.award;
+    const awardEn = project.awardEn || awardTh;
+    [['th', awardTh], ['en', awardEn]].forEach(([lang, html]) => {
+      const box = document.createElement('div');
+      box.className = 'project-award';
+      box.dataset.lang = lang;
+      box.innerHTML = html;
+      awardWrap.appendChild(box);
+    });
   } else {
-    awardEl.remove();
+    awardWrap.remove();
   }
 
   const paperBtn = document.getElementById('projectPaperBtn');
