@@ -162,7 +162,7 @@ const PROJECTS = [
     ]
   },
   {
-    slug: 'other-skills-music',
+    slug: 'music-1',
     title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     category: 'Other Skills',
     group: 'other-skills',
@@ -170,11 +170,11 @@ const PROJECTS = [
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
-      'images/projects/other-skills-music/1.jpg'
+      'images/projects/music-1/1.jpg'
     ]
   },
   {
-    slug: 'other-skills-sports',
+    slug: 'sports-1',
     title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     category: 'Other Skills',
     group: 'other-skills',
@@ -182,7 +182,7 @@ const PROJECTS = [
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
-      'images/projects/other-skills-sports/1.jpg'
+      'images/projects/sports-1/1.jpg'
     ]
   },
 ];
