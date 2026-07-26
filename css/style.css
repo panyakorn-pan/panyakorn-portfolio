@@ -323,6 +323,40 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   font-size: clamp(2.1rem, 5.2vw, 3.4rem);
   font-weight: 700;
 }
+
+/* ---- ชื่อบนหน้าแรกเลื่อนขึ้นมาทีละบรรทัด ----
+   .line-mask = กรอบซ่อน ตัวหนังสือข้างในเริ่มจากใต้กรอบแล้วเลื่อนขึ้นมา
+   ทำด้วย CSS animation ล้วน (ไม่ใช้ JS) ถ้า JS พังอนิเมชันก็ยังทำงาน
+   padding/margin-bottom เผื่อที่ให้หางตัว y กับ g ไม่ถูกกรอบตัดขาด */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  /* เผื่อที่ให้หางตัว y / g ไม่ถูกกรอบตัด (line-height 1.05 แคบกว่าความสูงหมึกจริงของฟอนต์)
+     margin-bottom ติดลบเท่ากัน เพื่อหักระยะคืน ระยะห่างระหว่างบรรทัดจึงไม่เปลี่ยน */
+  padding-bottom: 0.26em;
+  margin-bottom: -0.26em;
+}
+.line-mask > .line-lg {
+  animation: lineUp 1s cubic-bezier(.16, 1, .3, 1) both;
+}
+/* หน่วงเวลาไล่กันทีละบรรทัด = จังหวะแบบม่านเปิด */
+.line-mask:nth-child(1) > .line-lg { animation-delay: .30s; }
+.line-mask:nth-child(2) > .line-lg { animation-delay: .42s; }
+.line-mask:nth-child(3) > .line-lg { animation-delay: .54s; }
+@keyframes lineUp {
+  /* 130% ไม่ใช่ 110% — เพราะกรอบถูกขยายลงมาด้วย padding-bottom ด้านบน
+     ถ้าดันลงน้อยกว่านี้ หัวตัวอักษรจะโผล่เป็นเส้นบางๆ ให้เห็นก่อนอนิเมชันเริ่ม */
+  from { transform: translateY(130%); }
+  to   { transform: translateY(0); }
+}
+/* โลโก้กับรูปค่อยๆ จางเข้ามาก่อนชื่อเล็กน้อย */
+.hero-panel .hero-panel__logo {
+  animation: fadeIn .8s ease .12s both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 .hero-panel__tagline {
   color: var(--text-dim);
   font-size: 0.95rem;
@@ -749,6 +783,56 @@ a.contact-item:hover { color: var(--text); }
   transition: opacity .6s ease, transform .6s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- ม่านเปลี่ยนหน้า (page transition) ----------
+   ตอนเปิดหน้า: ม่านจางหายไปเองด้วย CSS animation ไม่ต้องรอ JS
+   (สำคัญ — ถ้าให้ JS เป็นคนเปิดม่าน แล้ว JS โหลดช้าหรือพัง จอจะดำค้างทั้งหน้า)
+   ตอนกดลิงก์ออกจากหน้า: js/script.js จะใส่คลาส .is-leaving ที่ <body> เพื่อดึงม่านกลับมา */
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--bg);
+  pointer-events: none;
+  animation: curtainOut .5s ease forwards;
+}
+@keyframes curtainOut {
+  from { opacity: 1; visibility: visible; }
+  to   { opacity: 0; visibility: hidden; }
+}
+body.is-leaving .page-curtain {
+  animation: curtainIn .32s ease forwards;
+}
+@keyframes curtainIn {
+  from { opacity: 0; visibility: visible; }
+  to   { opacity: 1; visibility: visible; }
+}
+
+/* เคารพการตั้งค่าของเครื่องที่ผู้ใช้ขอ "ลดการเคลื่อนไหว" (คนเมารถ/ไวต่อการเคลื่อนไหว)
+   ปิดอนิเมชันทิ้งไปเลย แล้ว "กำหนดสถานะปลายทางตรงๆ"
+   สำคัญ: ต้องไม่เขียนแบบย่นเวลาอนิเมชันให้สั้นจู๋ เพราะถ้าอนิเมชันไม่ได้วิ่งจบจริง
+   ตัวหนังสือจะค้างอยู่ใต้กรอบแล้วมองไม่เห็นเลย — วิธีนี้เห็นชัวร์ 100% ไม่ต้องพึ่งอนิเมชัน */
+@media (prefers-reduced-motion: reduce) {
+  .line-mask > .line-lg {
+    animation: none !important;
+    transform: none !important;
+  }
+  .hero-panel .hero-panel__logo {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+  .page-curtain {
+    animation: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  body.is-leaving .page-curtain { animation: none !important; }
+  .reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

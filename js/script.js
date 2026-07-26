@@ -2,6 +2,42 @@
 // Panyakorn Singhadoung — Portfolio interactions
 // ==========================================================================
 
+// ==========================================================================
+// ม่านเปลี่ยนหน้า (page transition) — ตอนกดลิงก์ในเว็บ ให้ม่านปิดก่อนแล้วค่อยเปลี่ยนหน้า
+// ตอน "เปิด" หน้าใหม่ ม่านจะจางหายเองด้วย CSS ไม่เกี่ยวกับ JS ตรงนี้
+// (ถ้าโค้ดนี้พัง ลิงก์ก็ยังกดได้ปกติ แค่ไม่มีจังหวะม่าน)
+// ==========================================================================
+(() => {
+  const EXIT_MS = 320;                 // ต้องเท่ากับ curtainIn ใน css/style.css
+
+  // กลับมาหน้านี้ด้วยปุ่ม back ของเบราว์เซอร์ ต้องเอาม่านออก ไม่ให้จอดำค้าง
+  window.addEventListener('pageshow', () => document.body.classList.remove('is-leaving'));
+
+  document.addEventListener('click', (e) => {
+    // ปล่อยผ่านถ้าผู้ใช้กดพร้อมปุ่มพิเศษ (เจตนาเปิดแท็บใหม่) หรือคลิกปุ่มกลาง
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    // ข้ามลิงก์ที่ไม่ใช่การเปลี่ยนหน้าในเว็บ: เปิดแท็บใหม่ / ดาวน์โหลด / อีเมล / โทร / ลิงก์สมอ (#)
+    if (link.target === '_blank' || link.hasAttribute('download')) return;
+    if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+
+    const url = new URL(href, location.href);
+    if (url.origin !== location.origin) return;                  // ลิงก์ออกนอกเว็บ
+    if (url.href === location.href) return;                      // ลิงก์หน้าเดิม
+    if (url.pathname === location.pathname && url.hash) return;  // เลื่อนภายในหน้าเดิม
+
+    e.preventDefault();
+    document.body.classList.add('is-leaving');
+    setTimeout(() => { location.href = url.href; }, EXIT_MS);
+    // กันเหนียว: ถ้าเปลี่ยนหน้าไม่สำเร็จ อย่าปล่อยให้จอดำค้าง
+    setTimeout(() => document.body.classList.remove('is-leaving'), 2500);
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Footer year
   const yearEl = document.getElementById('year');
