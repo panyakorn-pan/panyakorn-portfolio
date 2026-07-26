@@ -148,7 +148,7 @@ const PROJECTS = [
     title: 'อบรมในหลักสูตรช่างแอร์รถยนต์',
     category: 'educate',
     group: 'mainframe',
-    date: 'วันที่ 26 กุมภาพันธ์ 2026 · Bira Circuit, Pattaya, Thailand',
+    date: 'วันที่ 27-30 เมษายน 2026 · Soi Ekachai 93/1, Bangkok, Thailand',
     description: 'เข้าอบรมในหลักสูตรการซ่อมแอร์รถยนต์ โดยเริ่มปูตั่งแต่พื้นฐานทั้งในด้านทฤษฎีและปฏิบัติจริง รวมไปถึงการคำนวณราคาและค่าแรง',
     descriptionEn: 'Attended training course on car air conditioner repair, starting from the basics in both theory and hands-on practice, including how to calculate prices and labor costs',
     award: 'ได้เข้าร่อมอบรมในหลักสูตรช่างแอร์รถยนต์ เป็นเวลา 30 ชั่วโมง โดยเริ่มปูตั่งแต่พื้นฐานทั้งในด้านทฤษฎีและปฏิบัติจริง รวมไปถึงการคำนวณราคาและค่าแรง เพื่อสามารถนำไปต่อยอดในอนาคตต่อไปได้',
@@ -158,8 +158,7 @@ const PROJECTS = [
       'images/projects/training-course-on-car-air/2.jpg',
       'images/projects/training-course-on-car-air/3.jpg',
       'images/projects/training-course-on-car-air/4.jpg',
-      'images/projects/training-course-on-car-air/5.jpg',
-      'images/projects/training-course-on-car-air/6.jpg'
+      'images/projects/training-course-on-car-air/5.jpg'
     ]
   },
   {
