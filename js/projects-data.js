@@ -111,7 +111,7 @@ const PROJECTS = [
     title: 'การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชน — รอบภาคกลางและภาคตะวันออก (Innovedex2026)',
     category: 'competition',
     group: 'mainframe',
-    date: 'วันที่ 23–24 พฤษภาคม 2026 · มจพ. วิทยาเขตปราจีนบุรี, Pathum Thani, Thailand',
+    date: 'วันที่ 23–24 พฤษภาคม 2026 · มจพ. วิทยาเขตปราจีนบุรี, Prachinburi, Thailand',
     description: 'เข้าร่วมการแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนในรอบคัดเลือกระดับภาค',
     descriptionEn: 'Competed in the regional qualifying round of the Youth Autonomous Robotics and Artificial Intelligence Competition.',
     award: 'ได้คะแนนระดับเหรียญทอง — ในรอบคัดเลือกภาคกลางและภาคตะวันออก (Innovedex)',

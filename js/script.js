@@ -80,6 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // ต้องทำงานก่อน reveal observer ด้านล่าง เพื่อไม่ให้ไปจับข้อความภาษาที่ถูกซ่อนอยู่
   const langSwitch = document.getElementById('langSwitch');
   if (langSwitch) {
+    // ⚠️ ทุกครั้งที่แตะ localStorage ต้องมี try/catch ครอบ
+    // เพราะ Safari โหมดส่วนตัว หรือเครื่องที่ปิดคุกกี้ จะโยน error ทันทีที่เรียกใช้
+    // ถ้าไม่ดักไว้ error จะทะลุออกไปทำให้โค้ดที่อยู่ถัดจากนี้ทั้งหมดไม่ทำงาน
+    // (รวมถึงตัวสั่งให้เนื้อหาค่อยๆ ปรากฏ = ข้อความทั้งหน้าจะหายไปเลย)
+    const readSavedLang = () => {
+      try { return localStorage.getItem('siteLang'); } catch (e) { return null; }
+    };
+    const saveLang = (lang) => {
+      try { localStorage.setItem('siteLang', lang); } catch (e) { /* จำภาษาไม่ได้ก็ไม่เป็นไร ใช้งานต่อได้ปกติ */ }
+    };
+
     const applyLang = (lang, isInitial) => {
       // การซ่อน/แสดงข้อความ ทำโดย CSS ผ่านค่านี้ (ดู [data-lang] ใน css/style.css)
       document.documentElement.dataset.activeLang = lang;
@@ -92,12 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
       langSwitch.querySelectorAll('.lang-btn').forEach((btn) => {
         btn.classList.toggle('active', btn.dataset.setLang === lang);
       });
-      localStorage.setItem('siteLang', lang);
+      saveLang(lang);
     };
     langSwitch.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => applyLang(btn.dataset.setLang, false));
     });
-    applyLang(localStorage.getItem('siteLang') || 'th', true);
+    applyLang(readSavedLang() || 'th', true);
   }
 
   // Scroll reveal animation
