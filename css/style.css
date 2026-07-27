@@ -106,28 +106,36 @@ a { color: inherit; text-decoration: none; }
 .nav-link.active { color: var(--text); }
 .nav-link.active::after { transform: scaleX(1); }
 
+/* ปุ่มขีดสามขีด (โผล่เฉพาะจอมือถือ)
+   ไม่ใส่กรอบสี่เหลี่ยม เพราะกรอบสี var(--border) จางเกินบนพื้นดำ
+   จนเห็นเป็นสี่เหลี่ยมมัวๆ แล้วเส้นบางๆ ข้างในกลืนหายไป
+   เอาแค่ 3 ขีดขาวหนาชัดๆ อ่านง่ายกว่าบนจอมือถือความละเอียดสูง */
 .navbar__toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
+  gap: 6px;
+  width: 44px;          /* พื้นที่กดขนาดมาตรฐานสำหรับนิ้ว */
+  height: 44px;
+  padding: 0;
   background: transparent;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: none;
   cursor: pointer;
 }
 .navbar__toggle span {
   display: block;
-  height: 2px;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
   background: var(--text);
-  margin: 0 8px;
   transition: transform .25s ease, opacity .25s ease;
 }
-.navbar__toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+/* ตอนเปิดเมนู 3 ขีดพับเป็นกากบาท — 9px = ความสูงเส้น 3px + ระยะห่าง 6px
+   ถ้าแก้ height หรือ gap ด้านบน ต้องแก้เลข 9px นี้ให้ตรงกันด้วย */
+.navbar__toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
 .navbar__toggle.open span:nth-child(2) { opacity: 0; }
-.navbar__toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.navbar__toggle.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
 /* ---------- Buttons ---------- */
 .btn-outline {
@@ -547,16 +555,13 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
 }
 .project-card__title { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: var(--font-head); }
 
-/* แถบ "View Project ↗" ท้ายการ์ด — สัญญาณว่ากดเข้าไปดูได้ เห็นตลอดเวลาไม่ต้องเอาเมาส์ชี้
+/* แถบ "View Project" ท้ายการ์ด — สัญญาณว่ากดเข้าไปดูได้ เห็นตลอดเวลาไม่ต้องเอาเมาส์ชี้
    margin-top: auto ดันแถบนี้ลงไปติดก้นการ์ดเสมอ ทุกใบจะเรียงตรงกันเป็นแถว */
 .project-cta {
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: block;
   font-family: var(--font-head);
   font-size: 0.72rem;
   letter-spacing: 1.5px;
@@ -566,8 +571,6 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   transition: color .25s ease;
 }
 .project-card:hover .project-cta { color: var(--text); }
-.project-cta__arrow { transition: transform .25s ease; }
-.project-card:hover .project-cta__arrow { transform: translate(3px, -3px); }
 .project-award {
   font-size: 0.9rem;
   color: var(--text-dim);

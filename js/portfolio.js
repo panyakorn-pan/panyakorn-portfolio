@@ -67,14 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // (บนมือถือไม่มีการชี้ ถ้าใช้เอฟเฟกต์ hover อย่างเดียว คนจะไม่รู้เลยว่ากดได้)
     const cta = document.createElement('span');
     cta.className = 'project-cta';
-    const ctaText = document.createElement('span');
-    ctaText.textContent = 'View Project';
-    const ctaArrow = document.createElement('span');
-    ctaArrow.className = 'project-cta__arrow';
-    ctaArrow.setAttribute('aria-hidden', 'true');
-    ctaArrow.textContent = '↗';
-    cta.appendChild(ctaText);
-    cta.appendChild(ctaArrow);
+    cta.textContent = 'View Project';
 
     body.appendChild(badge);
     body.appendChild(title);
