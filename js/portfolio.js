@@ -54,8 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
     title.className = 'project-card__title';
     title.textContent = project.title;
 
+    // แถบท้ายการ์ด บอกให้รู้ว่ากดเข้าไปดูได้ — ต้องเห็นตลอดเวลา ไม่ใช่โผล่ตอนเอาเมาส์ชี้
+    // (บนมือถือไม่มีการชี้ ถ้าใช้เอฟเฟกต์ hover อย่างเดียว คนจะไม่รู้เลยว่ากดได้)
+    const cta = document.createElement('span');
+    cta.className = 'project-cta';
+    const ctaText = document.createElement('span');
+    ctaText.textContent = 'View Project';
+    const ctaArrow = document.createElement('span');
+    ctaArrow.className = 'project-cta__arrow';
+    ctaArrow.setAttribute('aria-hidden', 'true');
+    ctaArrow.textContent = '↗';
+    cta.appendChild(ctaText);
+    cta.appendChild(ctaArrow);
+
     body.appendChild(badge);
     body.appendChild(title);
+    body.appendChild(cta);
 
     card.appendChild(thumb);
     card.appendChild(body);

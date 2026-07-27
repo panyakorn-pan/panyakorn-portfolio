@@ -505,6 +505,9 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   display: flex;
   flex-direction: column;
   gap: 10px;
+  /* ให้เนื้อการ์ดยืดเต็มความสูงที่เหลือ แถบ View Project ด้านล่างจะได้อยู่ระดับเดียวกันทุกใบ
+     ถึงชื่องานจะยาวไม่เท่ากัน */
+  flex: 1;
 }
 .project-badge {
   font-family: var(--font-head);
@@ -517,6 +520,28 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   width: fit-content;
 }
 .project-card__title { font-size: 1.1rem; font-weight: 700; color: var(--text); font-family: var(--font-head); }
+
+/* แถบ "View Project ↗" ท้ายการ์ด — สัญญาณว่ากดเข้าไปดูได้ เห็นตลอดเวลาไม่ต้องเอาเมาส์ชี้
+   margin-top: auto ดันแถบนี้ลงไปติดก้นการ์ดเสมอ ทุกใบจะเรียงตรงกันเป็นแถว */
+.project-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-faint);
+  transition: color .25s ease;
+}
+.project-card:hover .project-cta { color: var(--text); }
+.project-cta__arrow { transition: transform .25s ease; }
+.project-card:hover .project-cta__arrow { transform: translate(3px, -3px); }
 .project-award {
   font-size: 0.9rem;
   color: var(--text-dim);
