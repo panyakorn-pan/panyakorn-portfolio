@@ -31,17 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const thumb = document.createElement('div');
     thumb.className = 'project-thumb';
+
+    // ชั้นทับรูปตอนเอาเมาส์ชี้ (รูปมืดลง + ขึ้นข้อความ) — แก้ข้อความได้ที่บรรทัดล่างนี้
+    // CSS สั่งให้โผล่เฉพาะเครื่องที่มีเมาส์จริง มือถือจะไม่ขึ้น (กันค้างหลังแตะ)
+    const overlay = document.createElement('span');
+    overlay.className = 'project-thumb__overlay';
+    overlay.textContent = 'Click here to read more details';
+
     const thumbSrc = project.images && project.images[0];
     if (thumbSrc) {
       const img = document.createElement('img');
       img.src = thumbSrc;
       img.alt = project.title;
       img.onerror = () => {
-        thumb.innerHTML = '';
-        thumb.appendChild(buildImagePlaceholder(thumbSrc));
+        // ลบแค่รูปที่พัง ห้ามล้าง thumb ทั้งก้อน ไม่งั้น overlay จะหายไปด้วย
+        img.remove();
+        thumb.insertBefore(buildImagePlaceholder(thumbSrc), overlay);
       };
       thumb.appendChild(img);
     }
+    thumb.appendChild(overlay);   // ต่อท้ายเสมอ เพื่อให้ทับอยู่บนสุด
 
     const body = document.createElement('div');
     body.className = 'project-card__body';
