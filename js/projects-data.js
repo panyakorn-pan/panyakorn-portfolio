@@ -40,7 +40,7 @@ const PROJECTS = [
   {
     slug: 'robot-arm-3dprint',
     title: 'การประชุมวิชาการระดับชาติ ด้านนวัตกรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024)',
-    category: 'Conference',
+    category: ['Conference', 'national'],
     group: 'mainframe',
     date: 'วันที่ 21–23 มีนาคม 2024 · Amari Hotel, Pattaya, Thailand',
     description: 'พัฒนาชุดแขนหุ่นยนต์ต้นทุนต่ำด้วยเครื่องพิมพ์ 3 มิติ เพื่อสนับสนุนการเรียนรู้ด้าน Robotics ให้เข้าถึงได้ง่ายขึ้น รับผิดชอบตำแหน่ง Head of Hardware Development',
@@ -64,7 +64,7 @@ const PROJECTS = [
   {
     slug: 'home-service-robot',
     title: 'Thailand Open ROS and Smart Robot Competition 2024',
-    category: 'competition',
+    category: ['competition', 'national'],
     group: 'mainframe',
     date: 'วันที่ 30–31 มีนาคม 2024 · Paradise Park, Bangkok, Thailand',
     description: 'พัฒนาหุ่นยนต์จำลองการทำงานช่วยเหลือมนุษย์ในบ้าน ภารกิจ Carry My Luggage และ Find My Mate ท่ามกลางข้อจำกัดด้านเวลาและทรัพยากร ผ่านเข้ารอบ 24 ทีมจากทั้งหมด 93 ทีม (สายรุ่นมัธยมมีเพียง 4 ทีม)',
@@ -93,7 +93,7 @@ const PROJECTS = [
   {
     slug: 'sorter-robot',
     title: 'การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชน ระดับชาติ (Innovedex2026)',
-    category: 'competition',
+    category: ['competition', 'national'],
     group: 'mainframe',
     date: 'วันที่ 4–5 กรกฎาคม 2026 · Zeer Rangsit, Pathum Thani, Thailand',
     description: 'ออกแบบ สร้าง และเขียนโปรแกรมควบคุมหุ่นยนต์อัตโนมัติแบบไม่เคลื่อนที่ ในศูนย์คัดแยกสินค้าจำลอง เพื่อขนย้ายและคัดแยกวัตถุตามประเภทที่กำหนด',
@@ -114,7 +114,7 @@ const PROJECTS = [
   {
     slug: 'innovedex-regional',
     title: 'การแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชน — รอบภาคกลางและภาคตะวันออก (Innovedex2026)',
-    category: 'competition',
+    category: ['competition', 'regional'],
     group: 'mainframe',
     date: 'วันที่ 23–24 พฤษภาคม 2026 · มจพ. วิทยาเขตปราจีนบุรี, Prachinburi, Thailand',
     description: 'เข้าร่วมการแข่งขันหุ่นยนต์อัตโนมัติและปัญญาประดิษฐ์เยาวชนในรอบคัดเลือกระดับภาค',
@@ -188,7 +188,7 @@ const PROJECTS = [
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
-      'images/projects/music-1/1.jpg'
+      'images/projects/music-1/1.png'
     ]
   },
   {

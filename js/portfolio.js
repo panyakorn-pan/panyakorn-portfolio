@@ -21,7 +21,24 @@ document.addEventListener('DOMContentLoaded', () => {
     { key: 'mainframe', label: 'Mainframe' },
     { key: 'other-skills', label: 'Other Skills' }
   ];
-  let activeFilter = 'mainframe';
+  const DEFAULT_FILTER = 'mainframe';
+
+  // จำแท็บที่เลือกไว้ เพื่อให้กด "Back to Hall of Frame" จากหน้ารายละเอียดงาน
+  // แล้วกลับมาอยู่แท็บเดิม ไม่เด้งกลับ Mainframe ทุกครั้ง
+  // ⚠️ ต้องครอบ try/catch เพราะ Safari โหมดส่วนตัว / เครื่องที่ปิดคุกกี้
+  //    จะโยน error ทันทีที่แตะ localStorage แล้วโค้ดที่เหลือจะไม่ทำงานเลย
+  const FILTER_KEY = 'hofFilter';
+  const readSavedFilter = () => {
+    try { return localStorage.getItem(FILTER_KEY); } catch (e) { return null; }
+  };
+  const saveFilter = (key) => {
+    try { localStorage.setItem(FILTER_KEY, key); } catch (e) { /* จำไม่ได้ก็ไม่เป็นไร */ }
+  };
+
+  // ต้องเช็คว่าค่าที่จำไว้ยังตรงกับแท็บที่มีอยู่จริง เผื่อวันหลังเปลี่ยนชื่อ/ลบแท็บ
+  // ไม่งั้นจะกรองด้วยค่าที่ไม่มีอยู่ แล้วหน้าจะว่างเปล่าโดยไม่มี error เตือน
+  const saved = readSavedFilter();
+  let activeFilter = FILTERS.some((f) => f.key === saved) ? saved : DEFAULT_FILTER;
 
   PROJECTS.forEach((project) => {
     const card = document.createElement('a');
@@ -107,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pill.textContent = f.label;
       pill.addEventListener('click', () => {
         activeFilter = f.key;
+        saveFilter(f.key);   // จำไว้ เพื่อให้กลับมาหน้านี้แล้วยังอยู่แท็บเดิม
         applyFilter();
       });
       filtersWrap.appendChild(pill);
