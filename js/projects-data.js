@@ -25,7 +25,7 @@ const PROJECTS = [
     title: '7th International Workshop on Artificial Intelligence and Education (WAIE 2025)',
     category: ['Conference', 'International'],
     group: 'mainframe',
-    date: 'วันที่ 27-29 ธันวาคม 2025, Yokohama, Japan',
+    date: 'วันที่ 27-29 กันยายน 2025, Yokohama, Japan',
     description: 'พัฒนาระบบค้นหาข้อมูลจากไฟล์ CSV โดยใช้ภาษาธรรมชาติ (Natural Language) ผ่าน Chatbot เพื่อช่วยให้การค้นหาข้อมูลเป็นเรื่องง่ายเหมือนพูดคุยกับผู้ช่วย',
     descriptionEn: 'Developed a system for searching data in CSV files using natural language through a chatbot, making data lookup as easy as talking to an assistant.',
     award: 'ได้รับ Certificate of Appreciation — งานวิจัยด้าน Chatbot<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025)  ในหัวข้อ Interacting with Student Information on Google Sheets Using the RAG Technique<br><em>ผลงานและงานวิจัยนี้ได้รับการรับรองและสนับสนุนโดย IEEE ร่วมกับเครือข่ายมหาวิทยาลัยและสถาบันวิจัยชั้นนำระดับนานาชาติจากญี่ปุ่น สหรัฐอเมริกา และฮ่องกง ได้แก่ Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield และ Hokkaido University of Science</em>',
