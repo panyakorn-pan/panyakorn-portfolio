@@ -38,6 +38,8 @@
 | `js/script.js` | ของที่ใช้ร่วมทุกหน้า (navbar, ม่านเปลี่ยนหน้า, สลับภาษา, reveal on scroll) |
 | `css/style.css` | CSS ทั้งเว็บอยู่ไฟล์เดียว |
 | `sitemap.xml` | แผนผังเว็บสำหรับ Google — **เพิ่มผลงานใหม่ต้องมาเพิ่ม `<url>` ที่นี่ด้วย** |
+| `tools/make_favicon.py` | สคริปต์สร้างไฟล์ favicon ทุกขนาด (ต้องมี Pillow) รันแล้วทับไฟล์เดิมให้เอง |
+| `favicon.ico` + `images/favicon-*.png` | ไอคอนเว็บ — **ห้ามกลับไปใช้ `data:` URI** Google ไม่รองรับ |
 | `googlece4ecacc362ac4e9.html` | ไฟล์ยืนยันเจ้าของเว็บของ Google Search Console — **ห้ามลบ ห้ามแก้** ลบแล้วโดนถอนสิทธิ์ |
 | `README.md` | คู่มือสำหรับ**เจ้าของเว็บ** วิธีแก้เนื้อหาทีละจุด |
 

@@ -33,7 +33,16 @@
 <meta name="twitter:image" content="https://panyakorn-pan.github.io/panyakorn-portfolio/images/og-card.jpg">
 <meta name="theme-color" content="#0a0a0a">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2212%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23ffffff%22 text-anchor=%22middle%22>PS</text></svg>">
+<!-- ===== ไอคอนเว็บ (favicon) =====
+     ⚠️ ห้ามกลับไปใช้ href="data:image/svg+xml,..." อีก
+        เบราว์เซอร์แสดงได้ก็จริง แต่ **Google ไม่รองรับ** พอบอตอ่านไม่ได้
+        มันจะเอารูปลูกโลกสีฟ้าธรรมดามาแปะแทนในผลค้นหา (เคยเป็นมาแล้ว)
+        ต้องเป็นไฟล์รูปจริงที่มี URL จริงเท่านั้น
+     ไฟล์พวกนี้สร้างจากสคริปต์ ถ้าจะเปลี่ยนลาย ต้องสร้างใหม่ให้ครบทุกขนาด -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -78,6 +87,21 @@
     "value": "https://orcid.org/0009-0005-9931-9015"
   },
   "mainEntityOfPage": "https://panyakorn-pan.github.io/panyakorn-portfolio/"
+}
+</script>
+
+<!-- ===== บอก Google ว่า "ชื่อเว็บ" นี้คืออะไร =====
+     เดิม Google เดาชื่อเว็บเองเป็น "GitHub Pages documentation" (เพราะเว็บอยู่บนโดเมน github.io
+     ที่แชร์กับคนทั้งโลก) ซึ่งขึ้นเป็นบรรทัดบนสุดของผลค้นหา ดูเหมือนไม่ใช่เว็บของเรา
+     ก้อนนี้คือสัญญาณที่ Google ใช้ตัดสินชื่อเว็บ แต่ **ไม่การันตี** ว่ามันจะเชื่อเรา
+     ถ้าอยากคุมชื่อเว็บได้ 100% ต้องมีโดเมนของตัวเอง -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Panyakorn Singhadoung",
+  "alternateName": "ปัณยกร สิงห์ดวง",
+  "url": "https://panyakorn-pan.github.io/panyakorn-portfolio/"
 }
 </script>
 </head>
