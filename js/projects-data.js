@@ -16,6 +16,9 @@
 //   ถ้าไม่ใส่ descriptionEn / awardEn จะใช้ข้อความภาษาไทยแสดงทั้งสองภาษา
 // ==========================================================================
 
+
+//========================= Mainframe ==========================
+
 const PROJECTS = [
   {
     slug: 'csv-chatbot',
@@ -164,9 +167,14 @@ const PROJECTS = [
       'images/projects/training-course-on-car-air/5.jpg'
     ]
   },
+
+
+//========================= Other skills ==========================
+
+
   {
     slug: 'goethe',
-    title: 'Goethe-Zertifikat — ภาษาเยอรมัน A1 ถึง B1',
+    title: 'Goethe-Zertifikat — ภาษาเยอรมันระดับ A1 ถึง B1',
     category: 'Language',
     group: 'other-skills',
     // ผลงานชิ้นนี้มีหน้ารายละเอียดเป็นของตัวเอง (goethe.html) ไม่ใช้หน้า project.html ร่วมกับงานอื่น
@@ -182,13 +190,37 @@ const PROJECTS = [
   {
     slug: 'music-1',
     title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
-    category: 'Other Skills',
+    category: 'music',
     group: 'other-skills',
     date: '',
     description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
       'images/projects/music-1/1.png'
+    ]
+  },
+  {
+    slug: 'The-Explace68',
+    title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    category: 'music',
+    group: 'other-skills',
+    date: '',
+    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
+    images: [
+      'images/projects/The-Explace68/1.jpg'
+    ]
+  },
+  {
+    slug: 'BPK67',
+    title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    category: 'music',
+    group: 'other-skills',
+    date: '',
+    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
+    images: [
+      'images/projects/BPK67/1.jpg'
     ]
   },
   {

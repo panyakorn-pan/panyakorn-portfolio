@@ -33,7 +33,11 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
+  /* ระยะขอบซ้าย-ขวา ปรับตามขนาดจอเอง: มือถือ 20px / แท็บเล็ต-คอมค่อยๆ กว้างขึ้น / สูงสุด 48px
+     ⚠️ คลาสอื่นที่ใช้คู่กับ .container (เช่น .section .page-header .footer)
+        ห้ามเขียน padding แบบย่อ เช่น "90px 0" เพราะจะไปล้างระยะขอบนี้ทิ้ง
+        ทำให้เนื้อหาชิดขอบจอ ให้ใช้ padding-top / padding-bottom แยกเสมอ */
+  padding: 0 clamp(20px, 4vw, 48px);
 }
 
 img { max-width: 100%; display: block; }
@@ -181,7 +185,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ---------- Page header (for sub-pages) ---------- */
 .page-header {
-  padding: 160px 0 60px;
+  /* แยก top/bottom ไม่ใช้แบบย่อ เพื่อไม่ให้ไปล้างระยะขอบซ้าย-ขวาของ .container */
+  padding-top: 160px;
+  padding-bottom: 60px;
 }
 .page-header--center {
   text-align: center;
@@ -385,7 +391,7 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
 }
 
 /* ---------- Section shared ---------- */
-.section { padding: 90px 0; border-bottom: 1px solid var(--border); }
+.section { padding-top: 90px; padding-bottom: 90px; border-bottom: 1px solid var(--border); }
 .section:last-of-type { border-bottom: none; }
 .section__title {
   font-family: var(--font-head);
@@ -610,13 +616,6 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   color: var(--text-faint);
 }
 
-/* คืนระยะขอบซ้าย-ขวาให้หน้านี้
-   เพราะ .page-header กับ .section เขียน padding แบบย่อ (เช่น "90px 0") ซึ่งไปล้าง
-   padding: 0 32px ของ .container ทิ้ง ทำให้เนื้อหาชิดขอบจอสนิทบนมือถือ
-   ป้ายระดับที่ชิดขวาจะดูเหมือนโดนตัด — ทำเฉพาะหน้านี้ ไม่แตะหน้าอื่น */
-.goethe-header,
-.goethe-section { padding-left: 32px; padding-right: 32px; }
-
 /* บันไดไล่ระดับ */
 .goethe-section { display: flex; flex-direction: column; gap: 64px; }
 .goethe-level { display: flex; flex-direction: column; gap: 24px; }
@@ -740,10 +739,14 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
 }
 
 /* ---------- About page: back-to-home button ---------- */
+/* ปุ่มกลับหน้าแรก (ท้ายเรื่องเล่าวัยเด็ก)
+   วางเป็นช่องหนึ่งในตาราง .childhood__grid โดยล็อกไว้คอลัมน์ 2 (คอลัมน์ข้อความ)
+   จึงขยับตามความกว้างของคอลัมน์เอง ไม่ต้องนับพิกเซลจากขอบจอ
+   เดิมใช้ margin-left: 600px กับ top: -139px ซึ่งพอจอกว้างขึ้นตำแหน่งจะเพี้ยน */
 .about-back-btn {
-  margin-left: 600px;
-  position: relative;
-  top: -139px;
+  grid-column: 2;
+  justify-self: start;
+  margin-top: 12px;
 }
 
 .project-detail__grid {
@@ -907,7 +910,8 @@ body.lightbox-active { overflow: hidden; }
 
 /* ---------- Contact / Footer ---------- */
 .footer {
-  padding: 70px 0 40px;
+  padding-top: 70px;
+  padding-bottom: 40px;
   border-top: 1px solid var(--border);
 }
 .footer__top {
@@ -1050,11 +1054,10 @@ body.is-leaving .page-curtain {
   .goethe-grid { grid-template-columns: repeat(2, 1fr); }
   .goethe-stats { grid-template-columns: 1fr; }
   .goethe-section { gap: 48px; }
+  /* จอเล็กตารางเหลือคอลัมน์เดียว ปุ่มจึงต้องย้ายมาคอลัมน์ 1 */
   .about-back-btn {
-    margin-left: 32px;
-    position: static;
-    top: 0;
-    margin-top: 32px;
+    grid-column: 1;
+    margin-top: 8px;
   }
   .portfolio__grid { grid-template-columns: 1fr; }
   .footer__contact { grid-template-columns: 1fr; }
