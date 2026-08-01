@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ถ้าไม่มีปุ่มเหลือเลย ก็ลบกล่องแถวปุ่มทิ้งด้วย ไม่งั้นจะเหลือช่องว่างเปล่าคั่นกลาง
   const linkBtns = [
     [document.getElementById('projectPaperBtn'), project.paper],
-    [document.getElementById('projectOrcidBtn'), project.orcid],
+    [document.getElementById('projectDoiBtn'), project.doi],
   ];
   linkBtns.forEach(([btn, url]) => {
     if (!btn) return;
