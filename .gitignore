@@ -4,3 +4,7 @@ desktop.ini
 *.log
 .vscode/
 .claude/
+
+# ไฟล์ที่ Python สร้างทิ้งไว้ตอนรันสคริปต์ ไม่ต้องเก็บขึ้น git
+__pycache__/
+*.pyc
