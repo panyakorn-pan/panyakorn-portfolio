@@ -581,6 +581,55 @@ git push
 
 ทั้งสองวิธีฟรี 100% ไม่มีค่าใช้จ่ายแอบแฝง
 
+## อยากให้ค้นชื่อใน Google แล้วเจอเว็บนี้ (SEO)
+
+**ข่าวดี:** ไม่มีใครในโลกชื่อ "Panyakorn Singhadoung" อยู่บน Google เลย
+ไม่ต้องแย่งอันดับกับใคร ขอแค่ Google "รู้จัก" เว็บเรา ก็ขึ้นอันดับ 1 เอง
+
+### ฝั่งโค้ดทำไว้ให้แล้ว (ไม่ต้องแตะ)
+| สิ่งที่ทำ | ทำหน้าที่อะไร |
+|---|---|
+| `sitemap.xml` | แผนผังบอก Google ว่ามีหน้าอะไรบ้าง (16 หน้า) |
+| `<link rel="canonical">` | บอกว่าหน้าไหนคือ "ตัวจริง" กัน Google นับซ้ำ |
+| JSON-LD `Person` ใน `index.html` | บัตรประจำตัวที่ Google อ่านได้ บอกว่าเว็บนี้เป็นของ *คน* ชื่อนี้ |
+| ชื่อไทยใน `<title>` + ท้ายเว็บ + `alt` ของรูป | ให้ค้นด้วยชื่อไทย "ปัณยกร สิงห์ดวง" ก็เจอ |
+
+### ⚠️ สิ่งที่ต้องทำเองครั้งเดียว — สำคัญที่สุด ข้ามไม่ได้
+โค้ดข้างบนช่วยได้ก็ต่อเมื่อ Google มาเก็บเว็บเราแล้ว แต่เว็บใหม่ที่ไม่มีใครลิงก์หา
+Google จะไม่มีทางเจอเองเลย ต้องไปบอกมันตรงๆ
+
+1. เข้า **[Google Search Console](https://search.google.com/search-console)** → ล็อกอินด้วย Gmail
+2. กด **Add property** → เลือกช่อง **URL prefix** (ช่องขวา ไม่ใช่ Domain) → ใส่
+   `https://panyakorn-pan.github.io/panyakorn-portfolio/`
+3. ยืนยันตัวตนด้วยวิธี **HTML file** → โหลดไฟล์ที่เขาให้มา → เอามาวางในโฟลเดอร์เว็บ → push ขึ้น GitHub → กลับไปกด Verify
+4. เมนู **Sitemaps** → ใส่ `sitemap.xml` → Submit
+5. ช่องค้นด้านบน (URL Inspection) → วาง URL หน้าแรก → กด **Request Indexing**
+
+เสร็จแล้วรอ **3 วัน – 2 สัปดาห์** เช็คความคืบหน้าโดยค้นใน Google ว่า
+`site:panyakorn-pan.github.io/panyakorn-portfolio` ถ้าขึ้นแปลว่าติดแล้ว
+
+### อยากให้ติดอันดับเร็วขึ้น
+Google เชื่อเว็บที่ "มีคนอื่นลิงก์หา" ลองเอาลิงก์เว็บไปวางที่:
+- **GitHub profile** (github.com/panyakorn-pan → Edit profile → ช่อง Website) — ได้ผลดีเพราะ Google เก็บ GitHub บ่อยมาก
+- **bio ของ Instagram / Facebook**
+- **ลายเซ็นอีเมล**
+- เว็บโรงเรียน / หน้าประกาศผลการแข่งขัน ถ้าขอได้
+
+### ⚠️ `robots.txt` ใส่ในโปรเจกต์นี้ไม่มีผล
+GitHub Pages แบบ project site อ่าน `robots.txt` จาก `panyakorn-pan.github.io/robots.txt`
+ซึ่งอยู่นอกโปรเจกต์นี้ เราคุมไม่ได้ — เลยไม่ได้สร้างไฟล์นี้ไว้ (ไม่ได้ลืม)
+ไม่ต้องกังวล เพราะ **ค่าเริ่มต้นคือให้เก็บทุกหน้าอยู่แล้ว** และ sitemap ส่งตรงผ่าน Search Console ได้เลย
+
+### ⚠️ เพิ่มผลงานใหม่แล้ว อย่าลืมแก้ `sitemap.xml`
+เพิ่มก้อนใหม่ใน `js/projects-data.js` แล้ว ให้เปิด `sitemap.xml` เพิ่มบรรทัดนี้ด้วย
+(เปลี่ยน `ชื่อ-slug` เป็นค่า `slug:` ที่ใส่ไว้):
+
+```xml
+<url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=ชื่อ-slug</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+```
+
+ถ้าลืม เว็บยังใช้งานได้ปกติทุกอย่าง แค่ Google จะรู้จักหน้านั้นช้ากว่าเดิม
+
 ## จุดเล็กๆ ที่ควรรู้ไว้
 
 - ฟอนต์ (Noto Sans Thai, Space Grotesk) โหลดจาก Google Fonts ผ่านเน็ต ถ้าอยากให้ใช้แบบ offline ล้วนๆ ต้องโหลดไฟล์ฟอนต์มาเก็บไว้ในเครื่องเอง

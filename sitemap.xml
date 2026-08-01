@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  แผนผังเว็บ (sitemap) — บอก Google ว่าเว็บนี้มีหน้าอะไรบ้าง
+  วิธีใช้: เอา URL นี้ไปส่งใน Google Search Console หัวข้อ "Sitemaps"
+     https://panyakorn-pan.github.io/panyakorn-portfolio/sitemap.xml
+
+  ⚠️ เพิ่มผลงานใหม่ใน js/projects-data.js แล้ว ให้มาเพิ่มบรรทัด <url> ตรงกลุ่มล่างด้วย
+     (ใช้ค่า slug: อันเดียวกับที่ใส่ในไฟล์นั้น) ไม่งั้น Google จะไม่รู้ว่ามีหน้าใหม่
+  ⚠️ lastmod = วันที่แก้ล่าสุด ใส่รูปแบบ YYYY-MM-DD อัปเดตตอนแก้เนื้อหาใหญ่ๆ ก็พอ
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ===== หน้าหลัก 4 หน้า ===== -->
+  <url>
+    <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/about.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/portfolio.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/goethe.html</loc>
+    <lastmod>2026-08-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ===== หน้ารายละเอียดผลงาน (หน้าเดียวกัน เปลี่ยนแค่ ?slug=) ===== -->
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=csv-chatbot</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=robot-arm-3dprint</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=home-service-robot</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=sorter-robot</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=innovedex-regional</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=educate</loc><lastmod>2026-08-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=carair</loc><lastmod>2026-08-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=goethe</loc><lastmod>2026-08-01</lastmod><priority>0.7</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=music-1</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=The-Explace68</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=BPK67</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=sports-1</loc><lastmod>2026-08-01</lastmod><priority>0.5</priority></url>
+
+</urlset>

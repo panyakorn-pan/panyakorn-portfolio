@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Panyakorn Singhadoung | Portfolio</title>
-<meta name="description" content="Personal portfolio website of Panyakorn Singhadoung — AI, Chatbot, Robotics & Embedded Systems">
+<title>Panyakorn Singhadoung (ปัณยกร สิงห์ดวง) | Portfolio</title>
+<meta name="description" content="พอร์ตโฟลิโอของ ปัณยกร สิงห์ดวง (Panyakorn Singhadoung) — ผลงานด้าน AI, Chatbot, หุ่นยนต์ และระบบสมองกลฝังตัว งานวิจัยระดับนานาชาติและรางวัลการแข่งขันหุ่นยนต์ระดับชาติ">
+
+<!-- ===== SEO: บอก Google ว่าหน้านี้คือ "ที่อยู่จริง" ของเนื้อหานี้ =====
+     กันกรณีมีคนลิงก์มาแบบ /index.html หรือมี ?อะไรต่อท้าย แล้ว Google นับเป็นคนละหน้า
+     ⚠️ ทุกหน้าต้องชี้มาที่ URL ของ "ตัวเอง" ห้ามก๊อป URL ข้ามหน้ากัน
+     ⚠️ project.html ตั้งใจไม่ใส่ เพราะหน้านั้นใช้ ?slug= แยกเป็นหลายผลงาน
+        ถ้าใส่ canonical ไป ทุกผลงานจะถูกยุบรวมเหลือหน้าเดียวในสายตา Google -->
+<link rel="canonical" href="https://panyakorn-pan.github.io/panyakorn-portfolio/">
 
 <!-- ===== การ์ดพรีวิวตอนแชร์ลิงก์ (LINE / Facebook / Messenger / X) =====
      รูปการ์ดอยู่ที่ images/og-card.jpg (1200x630)
@@ -31,6 +38,42 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=13">
+
+<!-- ===== ข้อมูลตัวตนแบบที่ Google อ่านเข้าใจ (JSON-LD / schema.org) =====
+     ก้อนนี้ไม่แสดงบนหน้าเว็บ คนเข้าเว็บมองไม่เห็น มีไว้ให้ Google อ่านอย่างเดียว
+     หน้าที่ของมันคือบอกว่า "เว็บนี้เป็นของคนชื่อนี้" ไม่ใช่แค่หน้าเว็บลอยๆ
+     ทำให้เวลาใครค้นชื่อ Google มั่นใจว่าตรงกับเว็บนี้จริง
+
+     ⚠️ ถ้าแก้ ต้องเป็น JSON ที่ถูกไวยากรณ์เป๊ะ — ลืมคอมมา หรือใส่คอมมาเกินท้ายบรรทัดสุดท้าย
+        Google จะทิ้งทั้งก้อนเงียบๆ ไม่มี error เตือน ตรวจได้ที่ search.google.com/test/rich-results
+     ⚠️ ห้ามใส่เครื่องหมาย " ในข้อความ ถ้าจำเป็นให้ใช้ \" -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Panyakorn Singhadoung",
+  "alternateName": ["ปัณยกร สิงห์ดวง", "Mr. Panyakorn Singhadoung"],
+  "url": "https://panyakorn-pan.github.io/panyakorn-portfolio/",
+  "image": "https://panyakorn-pan.github.io/panyakorn-portfolio/images/og-card.jpg",
+  "description": "นักเรียนมัธยมสายหุ่นยนต์ AI และวิศวกรรม มีผลงานวิจัยระดับนานาชาติและรางวัลการแข่งขันหุ่นยนต์ระดับชาติ",
+  "jobTitle": "Student — AI, Robotics & Embedded Systems",
+  "nationality": "Thai",
+  "knowsLanguage": ["th", "en", "de"],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Chatbot",
+    "Retrieval-Augmented Generation",
+    "Robotics",
+    "Embedded Systems",
+    "3D Printing"
+  ],
+  "sameAs": [
+    "https://github.com/panyakorn-pan",
+    "https://instagram.com/pxn_pyk"
+  ],
+  "mainEntityOfPage": "https://panyakorn-pan.github.io/panyakorn-portfolio/"
+}
+</script>
 </head>
 <body>
 
@@ -80,7 +123,7 @@
       </h1>
     </div>
     <div class="split-block__media reveal">
-      <img src="images/Home.jpg" alt="Panyakorn Singhadoung">
+      <img src="images/Home.jpg" alt="ปัณยกร สิงห์ดวง (Panyakorn Singhadoung)">
     </div>
   </section>
 
@@ -128,7 +171,9 @@
     </div>
   </div>
   <div class="footer__bottom">
-    <span>© <span id="year"></span> Panyakorn Singhadoung</span>
+    <!-- ชื่อไทยตรงนี้ไม่ได้ใส่เพื่อความสวยงาม แต่ใส่เพื่อให้ Google เจอเวลาคนค้นชื่อภาษาไทย
+         (Google เชื่อข้อความที่มองเห็นจริงบนหน้าเว็บ มากกว่าข้อความใน meta ที่ซ่อนอยู่) -->
+    <span>© <span id="year"></span> Panyakorn Singhadoung · ปัณยกร สิงห์ดวง</span>
     <span>Built with HTML, CSS &amp; JS</span>
   </div>
 </footer>
