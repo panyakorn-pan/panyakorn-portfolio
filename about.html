@@ -29,7 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=13">
 </head>
 <body>
 
@@ -120,6 +120,9 @@
         <img src="images/Auto-slide/1.jpg" alt="Panyakorn's childhood" class="childhood-slide is-active">
         <img src="images/Auto-slide/2.jpg" alt="Panyakorn's childhood" class="childhood-slide">
       </div>
+      <!-- คอลัมน์ขวา: ข้อความอยู่กลาง + ปุ่มปักไว้ก้นคอลัมน์
+           คอลัมน์นี้สูงเท่ารูปทางซ้าย ปุ่มจึงอยู่ระดับเดียวกับขอบล่างของรูปพอดี -->
+      <div class="childhood__col">
       <p class="childhood__text reveal" data-lang="th">
         &emsp;&emsp;&emsp;&emsp;ตั้งแต่เด็กผมเดินทางไปไหนมาไหนกับพ่ออยู่บ่อยๆ เวลานั่งรถพ่อชอบชี้ให้ดูรถต่างๆที่ขับผ่านไปมา และบอกชื่อรุ่นให้ฟัง
         มันคือจุดเล็กๆที่ทำให้ผมเริ่มมีความสนใจในรถขึ้นมาแบบไม่รู้ตัว พอเริ่มโตขึ้นพ่อผมก็ได้สอนการขับรถให้ผมพอได้ลองลงมือทำจริง
@@ -141,9 +144,8 @@
         has made me who I am today.
       </p>
 
-      <!-- ปุ่มนี้อยู่ในตารางเดียวกับรูปและข้อความ จึงเกาะตำแหน่งตามคอลัมน์เนื้อหาเอง
-           (เดิมวางนอกตารางแล้วนับพิกเซลจากขอบจอ พอจอใหญ่ขึ้นตำแหน่งเลยเพี้ยน) -->
-      <a href="index.html" class="btn-outline about-back-btn">← Back to Home</a>
+        <a href="index.html" class="btn-outline about-back-btn">← Back to Home</a>
+      </div>
     </div>
   </section>
 </main>
@@ -168,6 +170,6 @@
 
 <a href="#" class="scroll-top" id="scrollTop" aria-label="กลับขึ้นบนสุด">↑</a>
 
-<script src="js/script.js?v=12"></script>
+<script src="js/script.js?v=13"></script>
 </body>
 </html>

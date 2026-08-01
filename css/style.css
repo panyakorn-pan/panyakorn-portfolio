@@ -739,15 +739,17 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
 }
 
 /* ---------- About page: back-to-home button ---------- */
-/* ปุ่มกลับหน้าแรก (ท้ายเรื่องเล่าวัยเด็ก)
-   วางเป็นช่องหนึ่งในตาราง .childhood__grid โดยล็อกไว้คอลัมน์ 2 (คอลัมน์ข้อความ)
-   จึงขยับตามความกว้างของคอลัมน์เอง ไม่ต้องนับพิกเซลจากขอบจอ
-   เดิมใช้ margin-left: 600px กับ top: -139px ซึ่งพอจอกว้างขึ้นตำแหน่งจะเพี้ยน */
-.about-back-btn {
-  grid-column: 2;
-  justify-self: start;
-  margin-top: 12px;
+/* คอลัมน์ขวาของเรื่องเล่าวัยเด็ก (ข้อความ + ปุ่มกลับหน้าแรก)
+   align-self: stretch  = ให้คอลัมน์สูงเท่ารูปทางซ้าย (ลบล้าง align-items: center ของตาราง)
+   grid-template-rows: 1fr auto = แถวบนคือข้อความ (ยืดเต็ม) แถวล่างคือปุ่ม
+   ผลคือปุ่มถูกปักไว้ก้นคอลัมน์ = อยู่ระดับเดียวกับขอบล่างของรูปพอดีทุกขนาดจอ */
+.childhood__col {
+  align-self: stretch;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
+.childhood__col .childhood__text { align-self: center; }
+.about-back-btn { justify-self: start; }
 
 .project-detail__grid {
   display: grid;
@@ -1054,11 +1056,9 @@ body.is-leaving .page-curtain {
   .goethe-grid { grid-template-columns: repeat(2, 1fr); }
   .goethe-stats { grid-template-columns: 1fr; }
   .goethe-section { gap: 48px; }
-  /* จอเล็กตารางเหลือคอลัมน์เดียว ปุ่มจึงต้องย้ายมาคอลัมน์ 1 */
-  .about-back-btn {
-    grid-column: 1;
-    margin-top: 8px;
-  }
+  /* จอเล็กตารางเหลือคอลัมน์เดียว ไม่ต้องปักปุ่มไว้ก้นแล้ว ให้ไหลตามข้อความปกติ */
+  .childhood__col { display: block; }
+  .about-back-btn { margin-top: 24px; }
   .portfolio__grid { grid-template-columns: 1fr; }
   .footer__contact { grid-template-columns: 1fr; }
   .project-detail__grid { grid-template-columns: 1fr; }
