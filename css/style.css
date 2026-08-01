@@ -571,6 +571,145 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   transition: color .25s ease;
 }
 .project-card:hover .project-cta { color: var(--text); }
+
+/* ==========================================================================
+   หน้าใบเซอร์ภาษาเยอรมัน (goethe.html)
+   ใช้เฉพาะหน้านี้หน้าเดียว ไม่กระทบหน้าอื่น
+   ========================================================================== */
+
+/* แถบตัวเลขสรุป 3 ช่อง */
+.goethe-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.goethe-stat {
+  background: var(--bg);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.goethe-stat__num {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  color: var(--text);
+  line-height: 1.1;
+}
+.goethe-stat__label {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+}
+
+/* คืนระยะขอบซ้าย-ขวาให้หน้านี้
+   เพราะ .page-header กับ .section เขียน padding แบบย่อ (เช่น "90px 0") ซึ่งไปล้าง
+   padding: 0 32px ของ .container ทิ้ง ทำให้เนื้อหาชิดขอบจอสนิทบนมือถือ
+   ป้ายระดับที่ชิดขวาจะดูเหมือนโดนตัด — ทำเฉพาะหน้านี้ ไม่แตะหน้าอื่น */
+.goethe-header,
+.goethe-section { padding-left: 32px; padding-right: 32px; }
+
+/* บันไดไล่ระดับ */
+.goethe-section { display: flex; flex-direction: column; gap: 64px; }
+.goethe-level { display: flex; flex-direction: column; gap: 24px; }
+
+/* หัวข้อระดับ: ตัวใหญ่ + เส้นยาวคั่น + ป้ายกำกับ */
+.goethe-level__head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.goethe-level__mark {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1;
+  color: var(--text);
+}
+.goethe-level__line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.goethe-level__label {
+  font-family: var(--font-head);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* ตารางใบเซอร์ */
+.goethe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cert {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+.cert__thumb {
+  display: block;
+  position: relative;
+  aspect-ratio: 3 / 4;          /* ใบประกาศเป็นแนวตั้ง */
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color .25s ease;
+}
+.cert__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .25s ease;
+}
+.cert__code {
+  font-family: var(--font-head);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color .25s ease;
+}
+/* ไฮไลต์ตอนเอาเมาส์ชี้ — เฉพาะเครื่องที่มีเมาส์จริง มือถือไม่ต้อง */
+@media (hover: hover) and (pointer: fine) {
+  .cert:hover .cert__thumb { border-color: var(--text); }
+  .cert:hover .cert__thumb img { opacity: .75; }
+  .cert:hover .cert__code { color: var(--text); }
+}
+.cert:focus-visible .cert__thumb { border-color: var(--text); }
+
+/* ใบที่ยังไม่ได้ใส่รูป */
+.cert--empty { cursor: default; }
+.cert__missing {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+  font-size: 0.66rem;
+  line-height: 1.5;
+  color: var(--text-faint);
+  background:
+    repeating-linear-gradient(135deg, var(--surface), var(--surface) 14px, var(--surface-2) 14px, var(--surface-2) 28px);
+}
+
+.goethe-back { margin-top: 8px; }
 .project-award {
   font-size: 0.9rem;
   color: var(--text-dim);
@@ -901,6 +1040,10 @@ body.is-leaving .page-curtain {
   .about__grid { grid-template-columns: 1fr; }
   .childhood__grid { grid-template-columns: 1fr; }
   .childhood__media { min-height: 280px; }
+  /* หน้าใบเซอร์: จอเล็กลดเหลือ 2 ใบต่อแถว และแถบตัวเลขเรียงลงมา */
+  .goethe-grid { grid-template-columns: repeat(2, 1fr); }
+  .goethe-stats { grid-template-columns: 1fr; }
+  .goethe-section { gap: 48px; }
   .about-back-btn {
     margin-left: 32px;
     position: static;

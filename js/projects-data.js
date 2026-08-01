@@ -160,6 +160,21 @@ const PROJECTS = [
     ]
   },
   {
+    slug: 'goethe',
+    title: 'Goethe-Zertifikat — ภาษาเยอรมัน A1 ถึง B1',
+    category: 'Language',
+    group: 'other-skills',
+    // ผลงานชิ้นนี้มีหน้ารายละเอียดเป็นของตัวเอง (goethe.html) ไม่ใช้หน้า project.html ร่วมกับงานอื่น
+    // ถ้าลบบรรทัด url นี้ทิ้ง มันจะกลับไปใช้หน้ารายละเอียดแบบมาตรฐานทันที
+    url: 'goethe.html',
+    date: '',
+    description: 'เรียนและสอบผ่านหลักสูตรภาษาเยอรมันของสถาบันเกอเธ่ ครบ 11 โมดูล ตั้งแต่ระดับ A1 จนถึง B1',
+    descriptionEn: 'Completed 11 German language modules at the Goethe-Institut, progressing from level A1 through to B1.',
+    images: [
+      'images/projects/goethe/cover.jpg'
+    ]
+  },
+  {
     slug: 'music-1',
     title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
     category: 'Other Skills',

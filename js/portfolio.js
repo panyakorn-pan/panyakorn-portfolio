@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
   PROJECTS.forEach((project) => {
     const card = document.createElement('a');
     card.className = 'project-card reveal';
-    card.href = 'project.html?slug=' + encodeURIComponent(project.slug);
+    // ปกติกดการ์ดแล้วไปหน้า project.html (หน้ารายละเอียดกลางที่ใช้ร่วมกันทุกงาน)
+    // แต่ถ้าผลงานชิ้นไหนใส่ฟิลด์ url ไว้ จะลิงก์ไปหน้าพิเศษของตัวเองแทน
+    card.href = project.url || ('project.html?slug=' + encodeURIComponent(project.slug));
     card.dataset.group = project.group || '';
 
     const thumb = document.createElement('div');
