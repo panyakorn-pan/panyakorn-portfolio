@@ -601,7 +601,15 @@ Google จะไม่มีทางเจอเองเลย ต้องไ
 1. เข้า **[Google Search Console](https://search.google.com/search-console)** → ล็อกอินด้วย Gmail
 2. กด **Add property** → เลือกช่อง **URL prefix** (ช่องขวา ไม่ใช่ Domain) → ใส่
    `https://panyakorn-pan.github.io/panyakorn-portfolio/`
-3. ยืนยันตัวตนด้วยวิธี **HTML file** → โหลดไฟล์ที่เขาให้มา → เอามาวางในโฟลเดอร์เว็บ → push ขึ้น GitHub → กลับไปกด Verify
+3. ยืนยันตัวตนด้วยวิธี **HTML file** → โหลดไฟล์ที่เขาให้มา → เอามาวางในโฟลเดอร์เว็บ → **push ขึ้น GitHub** → รอ 1–2 นาที → กลับไปกด Verify
+
+   > **⚠️ "Ownership verification failed" เกือบทุกครั้งมาจากสาเหตุเดียว: ลืม push**
+   > วางไฟล์ในโฟลเดอร์เฉยๆ ไม่พอ เพราะ Google ไม่ได้ดูเครื่องคุณ แต่ไปเปิดเว็บจริง
+   > ต้องสั่ง `git add -A && git commit -m "verify" && git push` แล้ว**รอ 1–2 นาที**ให้ deploy เสร็จก่อน
+   > เช็คว่าพร้อมหรือยังโดยเปิดลิงก์ไฟล์นั้นบนเว็บจริงในเบราว์เซอร์ — ถ้าเห็นข้อความ `google-site-verification: ...` ค่อยกด Verify
+   >
+   > **⚠️ ห้ามลบไฟล์ `googlece4ecacc362ac4e9.html`** ถึงจะดูเหมือนไฟล์ขยะบรรทัดเดียว
+   > Google กลับมาเช็คเป็นระยะ ถ้าไฟล์หาย = ถูกถอนสิทธิ์ ต้องยืนยันใหม่ทั้งหมด
 4. เมนู **Sitemaps** → ใส่ `sitemap.xml` → Submit
 5. ช่องค้นด้านบน (URL Inspection) → วาง URL หน้าแรก → กด **Request Indexing**
 
