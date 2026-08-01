@@ -12,6 +12,10 @@
   --text: #f5f5f2;
   --text-dim: #b7b7b2;
   --text-faint: #7a7a75;
+  /* สีเขียวประจำแบรนด์ของ ORCID — เป็นสีเน้นสีเดียวที่ใช้ในเว็บทั้งหมด
+     ตั้งใจให้ปุ่ม ORCID ต่างจากปุ่มอื่น เพราะมันคือลิงก์ออกไปทะเบียนนักวิจัยที่เป็นทางการ
+     ถ้าจะเพิ่มสีเน้นอื่น ให้คิดให้ดีก่อน ธีมเว็บนี้คือขาวดำล้วน */
+  --orcid: #a6ce39;
   --radius: 4px;
   --font-head: 'Space Grotesk', 'Noto Sans Thai', sans-serif;
   --font-body: 'Noto Sans Thai', sans-serif;
@@ -731,8 +735,44 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
 }
 
 /* ---------- Project detail page ---------- */
-.project-paper-btn {
+/* แถวปุ่มลิงก์ท้ายรายละเอียดงาน (View Full Paper + ORCID)
+   flex-wrap ไว้เพื่อให้จอแคบปุ่มตกลงมาเรียงกันเองแทนที่จะล้นขอบ */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
   margin-top: 4px;
+}
+
+/* ปุ่มไปหน้าทะเบียนนักวิจัย ORCID
+   ทรงเดียวกับ .btn-outline เป๊ะ (ขนาด/ฟอนต์/ระยะ) ต่างแค่สีเส้นกับสีตัวอักษร
+   จะได้ยืนคู่กับปุ่มอื่นแล้วดูเป็นชุดเดียวกัน ไม่ใช่ปุ่มแปลกปลอม */
+.btn-orcid {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border: 1px solid var(--orcid);
+  border-radius: var(--radius);
+  font-family: var(--font-head);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--orcid);
+  background: transparent;
+  transition: background .2s ease, color .2s ease;
+  width: fit-content;
+}
+.btn-orcid:hover { background: var(--orcid); color: #0a0a0a; }
+/* ไอคอนวาดด้วย currentColor ล้วน (วงกลมเส้นบาง + ตัวอักษร iD)
+   ⚠️ ห้ามใส่สีตายตัว เพราะตอน hover พื้นเปลี่ยนเป็นเขียว ตัวอักษรต้องพลิกเป็นสีเข้มตามไปด้วย
+      ถ้า fix สีไว้ ไอคอนจะกลืนหายไปกับพื้นตอนเอาเมาส์ไปชี้ */
+.btn-orcid svg { width: 19px; height: 19px; flex-shrink: 0; }
+
+.project-paper-btn {
+  margin-top: 0;
 }
 .project-back {
   margin-top: 72px;
@@ -1062,6 +1102,8 @@ body.is-leaving .page-curtain {
   .portfolio__grid { grid-template-columns: 1fr; }
   .footer__contact { grid-template-columns: 1fr; }
   .project-detail__grid { grid-template-columns: 1fr; }
+  /* จอแคบให้ปุ่มยืดเต็มความกว้างแล้วเรียงซ้อนกัน กดง่ายกว่าปุ่มเล็กๆ สองอันเบียดกัน */
+  .project-links > * { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 720px) {

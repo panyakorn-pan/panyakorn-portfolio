@@ -56,12 +56,19 @@ document.addEventListener('DOMContentLoaded', () => {
     awardWrap.remove();
   }
 
-  const paperBtn = document.getElementById('projectPaperBtn');
-  if (project.paper) {
-    paperBtn.href = project.paper;
-  } else {
-    paperBtn.remove();
-  }
+  // ปุ่มลิงก์ท้ายรายละเอียดงาน — ผลงานไหนไม่ได้ใส่ฟิลด์ไว้ ปุ่มนั้นจะถูกลบทิ้ง
+  // ถ้าไม่มีปุ่มเหลือเลย ก็ลบกล่องแถวปุ่มทิ้งด้วย ไม่งั้นจะเหลือช่องว่างเปล่าคั่นกลาง
+  const linkBtns = [
+    [document.getElementById('projectPaperBtn'), project.paper],
+    [document.getElementById('projectOrcidBtn'), project.orcid],
+  ];
+  linkBtns.forEach(([btn, url]) => {
+    if (!btn) return;
+    if (url) btn.href = url;
+    else btn.remove();
+  });
+  const linksRow = document.querySelector('.project-links');
+  if (linksRow && !linksRow.children.length) linksRow.remove();
 
   // ---------- Slider ----------
   const slider = document.getElementById('projectSlider');

@@ -9,6 +9,9 @@
 //      แล้วป้ายแรกจะหายไปโดยไม่มี error เตือน ต้องใช้แบบลิสต์ [...] เท่านั้น
 // images: ใส่ path รูปได้กี่รูปก็ได้ รูปแรกจะถูกใช้เป็นภาพปกในหน้า Hall of Frame
 // paper: (ไม่บังคับ) path ไปยังไฟล์ PDF เช่น 'files/papers/xxx.pdf' ถ้าใส่ไว้จะมีปุ่ม "View Paper" โผล่ขึ้นในหน้ารายละเอียด ถ้าไม่มีก็ไม่ต้องใส่ฟิลด์นี้เลย
+// orcid: (ไม่บังคับ) ลิงก์ไปทะเบียนนักวิจัย ORCID ถ้าใส่ไว้จะมีปุ่ม "View on ORCID" (ปุ่มเขียว) โผล่ขึ้นข้างปุ่ม View Paper
+//   ใส่เฉพาะผลงานที่ลงทะเบียนไว้ใน ORCID จริงเท่านั้น — ตอนนี้มีแค่ paper WAIE 2025 ชิ้นเดียว
+//   เลข ORCID iD ที่โชว์บนปุ่มอยู่ใน project.html (ค้นคำว่า orcid-id) ถ้าเปลี่ยนเลขต้องแก้ทั้งสองที่
 // group: กลุ่มสำหรับปุ่มกรองในหน้า Hall of Frame ใส่ค่าใดค่าหนึ่ง 'mainframe' (งานหลักด้านหุ่นยนต์/AI/วิศวะ) หรือ 'other-skills' (ความสามารถอื่นๆ เช่น ดนตรี กีฬา ขับรถ) — ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ในหน้า Hall of Frame เลย (ไม่มีแท็บ "All" ให้แสดงรวมแล้ว)
 // description / descriptionEn: รายละเอียดงาน 2 ภาษา (ไทย / อังกฤษ)
 // award / awardEn: รางวัล 2 ภาษา (ไทย / อังกฤษ) — ใส่ <br> กับ <em> ได้
@@ -31,6 +34,7 @@ const PROJECTS = [
     award: 'ได้รับ Certificate of Appreciation — งานวิจัยด้าน Chatbot<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025)  ในหัวข้อ Interacting with Student Information on Google Sheets Using the RAG Technique<br><em>ผลงานและงานวิจัยนี้ได้รับการรับรองและสนับสนุนโดย IEEE ร่วมกับเครือข่ายมหาวิทยาลัยและสถาบันวิจัยชั้นนำระดับนานาชาติจากญี่ปุ่น สหรัฐอเมริกา และฮ่องกง ได้แก่ Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield และ Hokkaido University of Science</em>',
     awardEn: 'Received a Certificate of Appreciation — Chatbot research<br>7th International Workshop on Artificial Intelligence and Education (WAIE 2025), on the topic "Interacting with Student Information on Google Sheets Using the RAG Technique"<br><em>This work and research was endorsed and supported by IEEE, together with a network of leading international universities and research institutes from Japan, the United States, and Hong Kong — namely Kogakuin University, JAIST, The Hong Kong Polytechnic University, University of Illinois Springfield, and Hokkaido University of Science</em>',
     paper: 'files/papers/waie2025-rag-paper.pdf',
+    orcid: 'https://orcid.org/0009-0005-9931-9015',
     images: [
       'images/projects/WAIE2025/1.jpg',
       'images/projects/WAIE2025/2.jpg',
