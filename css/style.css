@@ -543,6 +543,12 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
      ถึงชื่องานจะยาวไม่เท่ากัน */
   flex: 1;
 }
+/* กล่องรวมป้ายหมวดหมู่ — ใส่ได้หลายป้าย เรียงข้างกัน ถ้าไม่พอจะตัดขึ้นบรรทัดใหม่เอง */
+.project-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 .project-badge {
   font-family: var(--font-head);
   font-size: 0.68rem;

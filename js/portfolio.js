@@ -57,9 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.createElement('div');
     body.className = 'project-card__body';
 
-    const badge = document.createElement('span');
-    badge.className = 'project-badge';
-    badge.textContent = project.category;
+    // ป้ายหมวดหมู่ — ใส่ได้ทั้งป้ายเดียว ('Conference')
+    // หรือหลายป้ายเป็นลิสต์ (['Conference', 'International'])
+    const badges = document.createElement('div');
+    badges.className = 'project-badges';
+    const cats = Array.isArray(project.category) ? project.category : [project.category];
+    cats.filter(Boolean).forEach((name) => {
+      const badge = document.createElement('span');
+      badge.className = 'project-badge';
+      badge.textContent = name;
+      badges.appendChild(badge);
+    });
 
     const title = document.createElement('h3');
     title.className = 'project-card__title';
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cta.className = 'project-cta';
     cta.textContent = 'View Project';
 
-    body.appendChild(badge);
+    body.appendChild(badges);
     body.appendChild(title);
     body.appendChild(cta);
 

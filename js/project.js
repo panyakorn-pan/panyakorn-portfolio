@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!project) return;
 
   document.title = project.title + ' | Panyakorn Singhadoung';
-  document.getElementById('projectCategory').textContent = project.category;
+  // หมวดหมู่ — รองรับทั้งป้ายเดียวและหลายป้าย (ลิสต์) เอามาต่อกันด้วย ·
+  const cats = Array.isArray(project.category) ? project.category : [project.category];
+  document.getElementById('projectCategory').textContent = cats.filter(Boolean).join(' · ');
   document.getElementById('projectTitle').textContent = project.title;
   document.getElementById('projectMeta').textContent = project.date || '';
   // รายละเอียดงาน — สร้างไว้ 2 ภาษา แล้วให้ระบบเปลี่ยนภาษาใน js/script.js สลับให้เอง

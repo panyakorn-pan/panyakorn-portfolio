@@ -2,6 +2,11 @@
 // Panyakorn Singhadoung — Hall of Frame project data
 // แหล่งข้อมูลกลาง ใช้ทั้งในหน้า portfolio.html (การ์ดรายการ) และ project.html (หน้ารายละเอียด)
 // เพิ่มผลงานใหม่: คัดลอกก้อน { ... } ด้านล่างสักก้อน แล้วแก้ค่าให้เป็นผลงานของคุณ
+// category: ป้ายหมวดหมู่บนการ์ด ใส่ได้ 2 แบบ
+//   ป้ายเดียว  ->  category: 'Conference'
+//   หลายป้าย   ->  category: ['Conference', 'International']   (ใส่กี่ป้ายก็ได้)
+//   ⚠️ ห้ามเขียน category สองบรรทัดซ้อนกัน JavaScript จะเอาบรรทัดล่างทับบรรทัดบนเงียบๆ
+//      แล้วป้ายแรกจะหายไปโดยไม่มี error เตือน ต้องใช้แบบลิสต์ [...] เท่านั้น
 // images: ใส่ path รูปได้กี่รูปก็ได้ รูปแรกจะถูกใช้เป็นภาพปกในหน้า Hall of Frame
 // paper: (ไม่บังคับ) path ไปยังไฟล์ PDF เช่น 'files/papers/xxx.pdf' ถ้าใส่ไว้จะมีปุ่ม "View Paper" โผล่ขึ้นในหน้ารายละเอียด ถ้าไม่มีก็ไม่ต้องใส่ฟิลด์นี้เลย
 // group: กลุ่มสำหรับปุ่มกรองในหน้า Hall of Frame ใส่ค่าใดค่าหนึ่ง 'mainframe' (งานหลักด้านหุ่นยนต์/AI/วิศวะ) หรือ 'other-skills' (ความสามารถอื่นๆ เช่น ดนตรี กีฬา ขับรถ) — ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ในหน้า Hall of Frame เลย (ไม่มีแท็บ "All" ให้แสดงรวมแล้ว)
@@ -15,7 +20,7 @@ const PROJECTS = [
   {
     slug: 'csv-chatbot',
     title: '7th International Workshop on Artificial Intelligence and Education (WAIE 2025)',
-    category: 'Conference',
+    category: ['Conference', 'International'],
     group: 'mainframe',
     date: 'วันที่ 27-29 ธันวาคม 2025, Yokohama, Japan',
     description: 'พัฒนาระบบค้นหาข้อมูลจากไฟล์ CSV โดยใช้ภาษาธรรมชาติ (Natural Language) ผ่าน Chatbot เพื่อช่วยให้การค้นหาข้อมูลเป็นเรื่องง่ายเหมือนพูดคุยกับผู้ช่วย',
