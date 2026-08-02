@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hall of Frame | Panyakorn Singhadoung</title>
-<meta name="description" content="ผลงานและรางวัลของ ปัณยกร สิงห์ดวง (Panyakorn Singhadoung) — งานวิจัย Chatbot, การแข่งขันหุ่นยนต์ระดับชาติและนานาชาติ">
-<link rel="canonical" href="https://panyakorn-pan.github.io/panyakorn-portfolio/portfolio.html">
+<title>My Work | Panyakorn Singhadoung</title>
+<meta name="description" content="ผลงานซ่อมและตกแต่งภายในรถยนต์ของ ปัณยกร สิงห์ดวง (Panyakorn Singhadoung) — งานหลังคาภายใน ช่องแอร์ คอนโซล และงานภายในอื่นๆ">
+<link rel="canonical" href="https://panyakorn-pan.github.io/panyakorn-portfolio/mywork.html">
 
 <!-- ===== การ์ดพรีวิวตอนแชร์ลิงก์ (ดูคำอธิบายเต็มใน index.html) ===== -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Panyakorn Singhadoung">
 <meta property="og:locale" content="th_TH">
-<meta property="og:url" content="https://panyakorn-pan.github.io/panyakorn-portfolio/portfolio.html">
-<meta property="og:title" content="Hall of Frame — Panyakorn Singhadoung">
-<meta property="og:description" content="รวมผลงาน รางวัล และช่วงเวลาที่ภูมิใจที่สุด — งานวิจัย Chatbot ระดับนานาชาติ และการแข่งขันหุ่นยนต์ระดับชาติ">
+<meta property="og:url" content="https://panyakorn-pan.github.io/panyakorn-portfolio/mywork.html">
+<meta property="og:title" content="My Work — Panyakorn Singhadoung">
+<meta property="og:description" content="ผลงานซ่อมและตกแต่งภายในรถยนต์ — ดูชิ้นงานจริงพร้อมคลิปตอนลงมือทำ">
 <meta property="og:image" content="https://panyakorn-pan.github.io/panyakorn-portfolio/images/og-card.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Panyakorn Singhadoung">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hall of Frame — Panyakorn Singhadoung">
-<meta name="twitter:description" content="รวมผลงาน รางวัล และช่วงเวลาที่ภูมิใจที่สุด — งานวิจัย Chatbot ระดับนานาชาติ และการแข่งขันหุ่นยนต์ระดับชาติ">
+<meta name="twitter:title" content="My Work — Panyakorn Singhadoung">
+<meta name="twitter:description" content="ผลงานซ่อมและตกแต่งภายในรถยนต์ — ดูชิ้นงานจริงพร้อมคลิปตอนลงมือทำ">
 <meta name="twitter:image" content="https://panyakorn-pan.github.io/panyakorn-portfolio/images/og-card.jpg?v=2">
 <meta name="theme-color" content="#0a0a0a">
 
@@ -58,8 +58,8 @@
     <nav class="navbar__nav" id="navMenu">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">My Profile</a>
-      <a href="mywork.html" class="nav-link">My Work</a>
-      <a href="portfolio.html" class="nav-link active">Hall of Frame</a>
+      <a href="mywork.html" class="nav-link active">My Work</a>
+      <a href="portfolio.html" class="nav-link">Hall of Frame</a>
     </nav>
     <button class="navbar__toggle" id="navToggle" aria-label="เปิดเมนู">
       <span></span><span></span><span></span>
@@ -68,20 +68,46 @@
 </header>
 
 <main>
-  <div class="container page-header page-header--center">
-    <h1 class="page-header__title reveal">Hall of Frame</h1>
+  <div class="container page-header page-header--tight">
+    <p class="page-header__eyebrow reveal">Automotive</p>
+    <h1 class="page-header__title reveal">My Work</h1>
     <p class="page-header__desc reveal">
-      This showcases the proudest moments and most meaningful memories in my&nbsp;life.
+      Repair and interior work I've done on cars — each job with the actual part,
+      photos, and a clip of the work in progress.
     </p>
-    <p class="page-header__desc reveal">
-      You can click on the image to read more details
-    </p>
+
+    <!-- ===== แถบประเภทงานที่รับทำ =====
+         ให้คนกวาดตา 3 วินาทีแล้วรู้เลยว่าตรงกับที่เขาต้องการไหม
+         เพิ่ม/ลดได้ตามใจ แค่ก๊อป <span> ทั้งบรรทัดแล้วแก้ข้อความ
+         ⚠️ ควรตรงกับงานที่มีอยู่จริงด้านล่าง ไม่ควรใส่สิ่งที่ยังไม่เคยทำ -->
+    <div class="work-skills reveal">
+      <span class="work-skill">Interior Trim</span>
+      <span class="work-skill">A/C Vents</span>
+      <span class="work-skill">Console &amp; Storage</span>
+      <span class="work-skill">Headliner</span>
+    </div>
   </div>
 
   <section class="container section">
+    <!-- ⚠️ data-groups บอก js/portfolio.js ว่าหน้านี้แสดงผลงานกลุ่มไหน
+         ถ้าลบบรรทัดนี้ หน้าจะกลายเป็นแสดงผลงานของ Hall of Frame แทน -->
     <div class="portfolio__filters" id="portfolioFilters"></div>
-    <!-- data-groups บอก js/portfolio.js ว่าหน้านี้แสดงผลงานกลุ่มไหน (กลุ่ม my-work ไม่โผล่ที่นี่) -->
-    <div class="portfolio__grid" id="portfolioGrid" data-groups="mainframe,other-skills"></div>
+    <div class="portfolio__grid" id="portfolioGrid" data-groups="my-work"></div>
+  </section>
+
+  <!-- ===== กล่องติดต่อ ===== -->
+  <section class="container section">
+    <div class="work-contact reveal">
+      <p class="work-contact__title">สนใจให้ทำงาน?</p>
+      <p class="work-contact__desc">
+        ติดต่อสอบถามได้เลยครับ ยินดีให้คำปรึกษา
+      </p>
+      <div class="work-contact__links">
+        <a href="tel:0886600001" class="btn-solid">โทร 088-660-0001</a>
+        <a href="mailto:hspg.pan@gmail.com" class="btn-outline">ส่งอีเมล</a>
+        <a href="https://instagram.com/pxn_pyk" target="_blank" rel="noopener" class="btn-outline">Instagram</a>
+      </div>
+    </div>
   </section>
 </main>
 

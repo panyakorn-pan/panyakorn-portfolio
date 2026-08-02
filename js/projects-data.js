@@ -13,7 +13,15 @@
 //   ใส่แบบเต็มเสมอ เช่น 'https://doi.org/10.1109/xxxxx' (อย่าใส่แค่เลข 10.1109/... เฉยๆ เพราะจะกดไม่ได้)
 //   DOI คือรหัสถาวรที่สำนักพิมพ์ออกให้ ลิงก์นี้จะใช้ได้ตลอดไปแม้เว็บสำนักพิมพ์ย้ายที่อยู่
 //   ⚠️ ใส่เฉพาะผลงานที่ตีพิมพ์จริงและมี DOI แล้วเท่านั้น — ตอนนี้มีชิ้นเดียวคือ paper WAIE 2025
-// group: กลุ่มสำหรับปุ่มกรองในหน้า Hall of Frame ใส่ค่าใดค่าหนึ่ง 'mainframe' (งานหลักด้านหุ่นยนต์/AI/วิศวะ) หรือ 'other-skills' (ความสามารถอื่นๆ เช่น ดนตรี กีฬา ขับรถ) — ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ในหน้า Hall of Frame เลย (ไม่มีแท็บ "All" ให้แสดงรวมแล้ว)
+// group: กลุ่มของผลงาน ตัวนี้เป็นตัวกำหนดว่าจะไปโผล่หน้าไหน ใส่ได้ 3 ค่า
+//   'mainframe'    -> หน้า Hall of Frame แท็บ Mainframe (งานหุ่นยนต์/AI/วิศวะ)
+//   'other-skills' -> หน้า Hall of Frame แท็บ Other Skills (ดนตรี กีฬา ภาษา)
+//   'my-work'      -> หน้า My Work (mywork.html) งานซ่อมรถที่รับทำ — ไม่โผล่ใน Hall of Frame
+//   ⚠️ ต้องใส่ให้ถูกทุกก้อน ถ้าใส่ผิด/ไม่ใส่ ผลงานชิ้นนั้นจะไม่โผล่ที่ไหนเลย (ไม่มีแท็บ "All" แล้ว)
+// video: (ไม่บังคับ) คลิปตอนลงมือทำ ใส่ได้ 2 แบบ ระบบดูจากลิงก์เองว่าเป็นแบบไหน
+//   ลิงก์ YouTube -> 'https://youtu.be/xxxxxxxxxxx'  (แนะนำแบบนี้ ไม่กินพื้นที่รีโป)
+//   ไฟล์ในเว็บ    -> 'files/videos/xxx.mp4'
+//   ⚠️ อย่าเอาไฟล์วิดีโอใหญ่ๆ ใส่ใน git เพราะ git เก็บประวัติไว้ตลอดไป ลบทีหลังก็ไม่คืนพื้นที่
 // description / descriptionEn: รายละเอียดงาน 2 ภาษา (ไทย / อังกฤษ)
 // award / awardEn: รางวัล 2 ภาษา (ไทย / อังกฤษ) — ใส่ <br> กับ <em> ได้
 //   สองคู่นี้คือจุดที่สลับภาษาได้ ส่วน title (ชื่องาน) กับ date (วันที่) จะแสดงตามที่พิมพ์ไว้เสมอ ไม่สลับภาษา
@@ -95,7 +103,8 @@ const PROJECTS = [
       'images/projects/@Home-education/12.jpg',
       'images/projects/@Home-education/13.jpg',
       'images/projects/@Home-education/14.jpg',
-      'images/projects/@Home-education/15.jpg'
+      'images/projects/@Home-education/15.jpg',
+      'images/projects/@Home-education/16.jpg'
     ]
   },
   {
@@ -242,6 +251,55 @@ const PROJECTS = [
     descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
     images: [
       'images/projects/sports-1/1.jpg'
+    ]
+  },
+
+
+  //===================== My Work (งานซ่อมรถ) =====================
+  // ก้อนในกลุ่มนี้จะไปโผล่ที่หน้า mywork.html เท่านั้น ไม่ปนกับ Hall of Frame
+  //
+  // เพิ่มงานใหม่: ก๊อปก้อนข้างล่างสัก 1 ก้อน วางต่อท้าย แล้วแก้ค่า
+  //   images[0] = รูป "ชิ้นส่วน" ถ่ายบนพื้นขาว  <- รูปนี้จะเป็นหน้าปกการ์ด
+  //   images[1] เป็นต้นไป = รูปประกอบตอนทำ / ก่อน-หลัง
+  //   video     = คลิปตอนลงมือทำ (ลิงก์ YouTube หรือไฟล์ .mp4 ในเว็บ)
+  //
+  // ⚠️ ข้อความ description ด้านล่างเป็นแค่โครงรอให้เจ้าของเว็บเขียนทับ
+  //    ควรเล่า 3 อย่าง: เดิมมันพังยังไง -> ทำอะไรไปบ้าง -> ผลออกมาเป็นยังไง
+
+  {
+    slug: 'ac-vent-center',
+    title: 'เปลี่ยนช่องแอร์กลาง',
+    category: 'A/C Vents',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เล่าว่าเดิมช่องแอร์มีปัญหาอะไร ถอดเปลี่ยนยังไง ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-ac-vent/part.jpg'
+    ]
+  },
+  {
+    slug: 'headliner',
+    title: 'ซ่อมหลังคาภายใน',
+    category: 'Headliner',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เล่าว่าเดิมผ้าหลังคาเป็นยังไง ซ่อมยังไง ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-headliner/part.jpg'
+    ]
+  },
+  {
+    slug: 'coin-holder',
+    title: 'เปลี่ยนช่องเก็บเหรียญ',
+    category: 'Console & Storage',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เล่าว่าเดิมช่องเก็บเหรียญมีปัญหาอะไร เปลี่ยนยังไง ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-coin-holder/part.jpg'
     ]
   },
 ];

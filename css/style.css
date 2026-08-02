@@ -518,6 +518,15 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   object-fit: cover;
 }
 
+/* การ์ดหน้า My Work — รูปเป็น "ชิ้นส่วนที่เปลี่ยน" ถ่ายบนพื้นขาวแบบรูปสินค้า
+   ต้องใช้คนละแบบกับการ์ดผลงานทั่วไป:
+     พื้นสว่าง  = รูปสินค้าพื้นขาวจะกลืนไปกับการ์ดพอดี ไม่เห็นขอบขาวเป็นสี่เหลี่ยม
+     contain   = เห็นชิ้นส่วนเต็มตัว ไม่โดนตัดหัวตัดท้าย (cover จะครอปทิ้ง)
+     padding   = เว้นขอบรอบชิ้นส่วน ไม่ให้ชนขอบการ์ด
+   js/portfolio.js เป็นคนใส่คลาสนี้ให้เอง เมื่อผลงานอยู่กลุ่ม my-work */
+.project-thumb--part { background: var(--text); }
+.project-thumb--part img { object-fit: contain; padding: 9%; }
+
 /* ชั้นทับรูปตอนเอาเมาส์ชี้ — รูปมืดลงแล้วขึ้นข้อความบอกว่ากดได้
    ข้อความอยู่ใน js/portfolio.js (ค้นหาคำว่า project-thumb__overlay) */
 .project-thumb__overlay {
@@ -733,6 +742,72 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   font-size: 0.76rem;
   color: var(--text-faint);
   margin-top: auto;
+}
+
+/* ---------- คลิปวิดีโอในหน้ารายละเอียดผลงาน ----------
+   กล่องอัตราส่วน 16:9 ที่ยืดหดตามความกว้างจอเอง
+   ⚠️ ต้องกำหนดสัดส่วนที่ "กล่องนอก" ไม่ใช่ที่ตัววิดีโอ
+      เพราะถ้าปล่อยให้ iframe กำหนดความสูงเอง หน้าเว็บจะกระตุกตอนโหลด
+      (เนื้อหาใต้วิดีโอจะกระโดดลงตอนวิดีโอโหลดเสร็จ) */
+.project-video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.project-video iframe,
+.project-video video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* ---------- หน้า My Work ---------- */
+/* แถบบอกประเภทงานที่รับทำ อยู่บนสุดของหน้า ให้คนกวาดตาแล้วรู้ทันทีว่าทำอะไรได้ */
+.work-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+.work-skill {
+  font-family: var(--font-head);
+  font-size: 0.76rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 16px;
+}
+
+/* กล่องติดต่อท้ายหน้า — จุดสำคัญของหน้านี้
+   คนดูผลงานจบแล้วประทับใจ ต้องรู้ทันทีว่าติดต่อยังไง ไม่ต้องเลื่อนหาเอง */
+.work-contact {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px clamp(20px, 4vw, 44px);
+  text-align: center;
+}
+.work-contact__title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.work-contact__desc { color: var(--text-dim); margin-bottom: 26px; }
+.work-contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
 /* ---------- Project detail page ---------- */

@@ -17,11 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const filtersWrap = document.getElementById('portfolioFilters');
   if (!grid || typeof PROJECTS === 'undefined') return;
 
-  const FILTERS = [
-    { key: 'mainframe', label: 'Mainframe' },
-    { key: 'other-skills', label: 'Other Skills' }
-  ];
-  const DEFAULT_FILTER = 'mainframe';
+  // ชื่อที่จะโชว์บนปุ่มกรองของแต่ละกลุ่ม — เพิ่มกลุ่มใหม่ให้มาเพิ่มชื่อตรงนี้ด้วย
+  const GROUP_LABELS = {
+    'mainframe': 'Mainframe',
+    'other-skills': 'Other Skills',
+    'my-work': 'My Work'
+  };
+
+  // หน้าไหนแสดงกลุ่มไหน อ่านจาก data-groups บน #portfolioGrid ในไฟล์ .html
+  //   portfolio.html -> data-groups="mainframe,other-skills"  (มีปุ่มกรอง 2 ปุ่ม)
+  //   mywork.html    -> data-groups="my-work"                 (กลุ่มเดียว ไม่ต้องมีปุ่มกรอง)
+  // ทำแบบนี้เพื่อให้ไฟล์นี้ใช้ซ้ำได้ทั้งสองหน้า ไม่ต้องมีโค้ดวาดการ์ดสองชุด
+  const groups = (grid.dataset.groups || 'mainframe,other-skills')
+    .split(',').map((s) => s.trim()).filter(Boolean);
+
+  const FILTERS = groups.map((key) => ({ key, label: GROUP_LABELS[key] || key }));
+  const DEFAULT_FILTER = groups[0];
 
   // จำแท็บที่เลือกไว้ เพื่อให้กด "Back to Hall of Frame" จากหน้ารายละเอียดงาน
   // แล้วกลับมาอยู่แท็บเดิม ไม่เด้งกลับ Mainframe ทุกครั้ง
@@ -50,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const thumb = document.createElement('div');
     thumb.className = 'project-thumb';
+    // งานในกลุ่ม my-work ใช้รูปชิ้นส่วนถ่ายบนพื้นขาว ต้องแสดงคนละแบบ
+    // (พื้นการ์ดสว่าง + เห็นชิ้นส่วนเต็มตัวไม่โดนครอป) ดูรายละเอียดที่ .project-thumb--part ใน css
+    if (project.group === 'my-work') thumb.classList.add('project-thumb--part');
 
     // ชั้นทับรูปตอนเอาเมาส์ชี้ (รูปมืดลง + ขึ้นข้อความ) — แก้ข้อความได้ที่บรรทัดล่างนี้
     // CSS สั่งให้โผล่เฉพาะเครื่องที่มีเมาส์จริง มือถือจะไม่ขึ้น (กันค้างหลังแตะ)
@@ -115,7 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (filtersWrap) {
+  // มีกลุ่มเดียว (เช่นหน้า My Work) ไม่ต้องมีปุ่มกรอง — ปุ่มเดียวโดดๆ กดแล้วไม่เกิดอะไรขึ้น ดูงง
+  if (filtersWrap && FILTERS.length > 1) {
     FILTERS.forEach((f) => {
       const pill = document.createElement('button');
       pill.type = 'button';
@@ -129,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       filtersWrap.appendChild(pill);
     });
-    applyFilter();
   }
+  // เรียกเสมอ ไม่ว่าจะมีปุ่มกรองหรือไม่ ไม่งั้นหน้าที่มีกลุ่มเดียวจะโชว์ผลงานทุกชิ้นปนกัน
+  applyFilter();
 });

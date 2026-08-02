@@ -40,7 +40,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=16">
+<link rel="stylesheet" href="css/style.css?v=17">
 </head>
 <body>
 
@@ -61,6 +61,7 @@
     <nav class="navbar__nav" id="navMenu">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">My Profile</a>
+      <a href="mywork.html" class="nav-link">My Work</a>
       <a href="portfolio.html" class="nav-link active">Hall of Frame</a>
     </nav>
     <button class="navbar__toggle" id="navToggle" aria-label="เปิดเมนู">
@@ -95,6 +96,9 @@
           <button type="button" class="lang-btn" data-set-lang="en">EN</button>
         </div>
         <div id="projectDesc"></div>
+        <!-- คลิปตอนทำงาน — โผล่เมื่อผลงานนั้นมีฟิลด์ video: ใน js/projects-data.js
+             ถ้าไม่มี กล่องนี้จะถูกลบทิ้งเอง ไม่เหลือช่องว่างค้าง -->
+        <div class="project-video reveal" id="projectVideo"></div>
         <div id="projectAward"></div>
         <!-- แถวปุ่มลิงก์ — ปุ่มไหนไม่มีข้อมูลใน js/projects-data.js จะถูกลบทิ้งเองโดย js/project.js
              View Full Paper    โผล่เมื่อผลงานนั้นมีฟิลด์  paper:  (ไฟล์ PDF ที่เก็บไว้ในเว็บเรา)
@@ -112,7 +116,9 @@
             View on IEEE Xplore
           </a>
         </div>
-        <a href="portfolio.html" class="btn-outline project-back reveal">← Back to Hall of Frame</a>
+        <!-- ข้อความ/ปลายทางของปุ่มนี้ถูก js/project.js เปลี่ยนให้เอง
+             ถ้าผลงานอยู่กลุ่ม my-work จะกลายเป็น "Back to My Work" -->
+        <a href="portfolio.html" class="btn-outline project-back reveal" id="projectBack">← Back to Hall of Frame</a>
       </div>
     </div>
   </section>
@@ -145,8 +151,8 @@
 
 <a href="#" class="scroll-top" id="scrollTop" aria-label="กลับขึ้นบนสุด">↑</a>
 
-<script src="js/projects-data.js?v=16"></script>
-<script src="js/project.js?v=16"></script>
-<script src="js/script.js?v=16"></script>
+<script src="js/projects-data.js?v=17"></script>
+<script src="js/project.js?v=17"></script>
+<script src="js/script.js?v=17"></script>
 </body>
 </html>

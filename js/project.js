@@ -58,6 +58,45 @@ document.addEventListener('DOMContentLoaded', () => {
     awardWrap.remove();
   }
 
+  // ---------- คลิปวิดีโอ ----------
+  // รองรับ 2 แบบ ระบบดูจากลิงก์เองว่าเป็นแบบไหน ไม่ต้องบอก
+  //   1. ลิงก์ YouTube  -> แปลงเป็นตัวเล่นแบบฝัง (แนะนำ ไม่กินพื้นที่รีโป)
+  //   2. ไฟล์ .mp4 ในเว็บ -> ใช้ตัวเล่นของเบราว์เซอร์
+  // ไม่ใส่ฟิลด์ video: = ไม่มีคลิป กล่องจะถูกลบทิ้ง
+  const videoWrap = document.getElementById('projectVideo');
+  if (videoWrap) {
+    const src = project.video;
+    // ดึงรหัสคลิปจากลิงก์ YouTube ได้ทุกรูปแบบ (youtu.be/, watch?v=, /embed/, /shorts/)
+    const ytId = src && (src.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/)([\w-]{11})/) || [])[1];
+    if (ytId) {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + ytId;
+      f.title = project.title;
+      f.loading = 'lazy';
+      f.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      videoWrap.appendChild(f);
+    } else if (src) {
+      const v = document.createElement('video');
+      v.src = src;
+      v.controls = true;
+      v.preload = 'metadata';
+      v.playsInline = true;
+      videoWrap.appendChild(v);
+    } else {
+      videoWrap.remove();
+    }
+  }
+
+  // ---------- ปุ่มย้อนกลับ ----------
+  // ต้องพากลับไปหน้าที่คนมาจากจริงๆ ไม่งั้นคนที่มาจากหน้า My Work
+  // จะโดนเด้งไป Hall of Frame แล้วหาทางกลับไม่เจอ
+  const backBtn = document.getElementById('projectBack');
+  if (backBtn && project.group === 'my-work') {
+    backBtn.href = 'mywork.html';
+    backBtn.textContent = '← Back to My Work';
+  }
+
   // ปุ่มลิงก์ท้ายรายละเอียดงาน — ผลงานไหนไม่ได้ใส่ฟิลด์ไว้ ปุ่มนั้นจะถูกลบทิ้ง
   // ถ้าไม่มีปุ่มเหลือเลย ก็ลบกล่องแถวปุ่มทิ้งด้วย ไม่งั้นจะเหลือช่องว่างเปล่าคั่นกลาง
   const linkBtns = [
