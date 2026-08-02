@@ -521,7 +521,10 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
   border-radius: var(--radius);
   overflow: hidden;
 }
-.portfolio__grid--shop .project-thumb { aspect-ratio: 1 / 1; }
+/* กรอบ 4:3 ต้องตรงกับ TARGET_RATIO ใน tools/prep_part_photos.py
+   ถ้าเปลี่ยนตรงนี้ ต้องไปเปลี่ยนในสคริปต์แล้วรันจัดรูปใหม่ด้วย ไม่งั้นจะเหลือขอบขาวไม่เท่ากัน
+   (เลือก 4:3 แทนจัตุรัส เพราะชิ้นส่วนภายในรถส่วนใหญ่เป็นทรงแนวนอน) */
+.portfolio__grid--shop .project-thumb { aspect-ratio: 4 / 3; }
 /* การ์ดแคบลง ตัวหนังสือกับระยะขอบต้องย่อตาม ไม่งั้นดูอึดอัด */
 .portfolio__grid--shop .project-card__body { padding: 16px 18px 18px; gap: 8px; }
 .portfolio__grid--shop .project-card__title { font-size: 0.95rem; line-height: 1.45; }
@@ -564,8 +567,12 @@ html[data-active-lang="en"] [data-lang="en"] { display: block; }
      contain   = เห็นชิ้นส่วนเต็มตัว ไม่โดนตัดหัวตัดท้าย (cover จะครอปทิ้ง)
      padding   = เว้นขอบรอบชิ้นส่วน ไม่ให้ชนขอบการ์ด
    js/portfolio.js เป็นคนใส่คลาสนี้ให้เอง เมื่อผลงานอยู่กลุ่ม my-work */
-.project-thumb--part { background: var(--text); }
-.project-thumb--part img { object-fit: contain; padding: 9%; }
+.project-thumb--part { background: #ffffff; }
+/* ⚠️ ห้ามใส่ padding ตรงนี้
+   รูปถูกจัดขอบขาวมาให้เรียบร้อยแล้วด้วย tools/prep_part_photos.py (ขอบ 4% สัดส่วน 4:3)
+   ถ้าใส่ padding เพิ่มอีก จะกลายเป็นขอบขาวซ้อนขอบขาว ชิ้นส่วนจะลอยเล็กอยู่กลางกรอบ
+   (เคยเป็นมาแล้ว — รูปสินค้าที่โหลดมามีพื้นขาวติดมาในไฟล์เยอะอยู่แล้ว) */
+.project-thumb--part img { object-fit: contain; }
 
 /* ชั้นทับรูปตอนเอาเมาส์ชี้ — รูปมืดลงแล้วขึ้นข้อความบอกว่ากดได้
    ข้อความอยู่ใน js/portfolio.js (ค้นหาคำว่า project-thumb__overlay) */

@@ -267,15 +267,15 @@ const PROJECTS = [
   //    ควรเล่า 3 อย่าง: เดิมมันพังยังไง -> ทำอะไรไปบ้าง -> ผลออกมาเป็นยังไง
 
   {
-    slug: 'ac-vent-center',
-    title: 'เปลี่ยนช่องแอร์กลาง',
-    category: 'A/C Vents',
+    slug: 'f10_front_air_grille',
+    title: 'Front Air Grille',
+    category: 'series5 f10',
     group: 'my-work',
     date: '',
     description: '[แก้ไขตรงนี้: เล่าว่าเดิมช่องแอร์มีปัญหาอะไร ถอดเปลี่ยนยังไง ผลออกมาเป็นยังไง]',
     descriptionEn: '',
     images: [
-      'images/projects/work-ac-vent/part.jpg'
+      'images/projects/front-air-grille/1.jpg'
     ]
   },
   {

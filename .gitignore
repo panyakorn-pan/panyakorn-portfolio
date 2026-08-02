@@ -8,3 +8,6 @@ desktop.ini
 # ไฟล์ที่ Python สร้างทิ้งไว้ตอนรันสคริปต์ ไม่ต้องเก็บขึ้น git
 __pycache__/
 *.pyc
+
+# รูปต้นฉบับก่อนถูก tools/prep_part_photos.py จัดขอบ เก็บไว้ในเครื่องพอ ไม่ต้องขึ้น git
+_original/
