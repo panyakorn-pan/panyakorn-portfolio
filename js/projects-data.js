@@ -302,4 +302,48 @@ const PROJECTS = [
       'images/projects/work-coin-holder/part.jpg'
     ]
   },
+
+  // ---------------------------------------------------------------------
+  // 3 ก้อนล่างนี้เป็น "โครงเปล่า" รอเติม
+  // ⚠️ ชื่องานเป็นแค่ตัวอย่างที่ยกมาให้เห็นภาพ ต้องแก้ให้ตรงกับงานที่ทำจริง
+  //    ก้อนไหนไม่ได้ทำ ให้ลบทั้งก้อนทิ้ง (ตั้งแต่ { ถึง }, รวมคอมมาท้ายด้วย)
+  //    อย่าปล่อยทิ้งไว้ เพราะหน้านี้มีไว้ให้ลูกค้าดู ถ้าโชว์งานที่ไม่ได้ทำจะเสียความน่าเชื่อถือ
+  // ---------------------------------------------------------------------
+
+  {
+    slug: 'door-panel',
+    title: 'เปลี่ยนแผงประตู',
+    category: 'Interior Trim',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เดิมพังยังไง → ทำอะไรไปบ้าง → ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-door-panel/part.jpg'
+    ]
+  },
+  {
+    slug: 'armrest',
+    title: 'เปลี่ยนที่พักแขนคอนโซลกลาง',
+    category: 'Console & Storage',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เดิมพังยังไง → ทำอะไรไปบ้าง → ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-armrest/part.jpg'
+    ]
+  },
+  {
+    slug: 'side-vents',
+    title: 'เปลี่ยนช่องแอร์ข้าง',
+    category: 'A/C Vents',
+    group: 'my-work',
+    date: '',
+    description: '[แก้ไขตรงนี้: เดิมพังยังไง → ทำอะไรไปบ้าง → ผลออกมาเป็นยังไง]',
+    descriptionEn: '',
+    images: [
+      'images/projects/work-side-vents/part.jpg'
+    ]
+  },
 ];
