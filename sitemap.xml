@@ -27,11 +27,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/mywork.html</loc>
-    <lastmod>2026-08-02</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://panyakorn-pan.github.io/panyakorn-portfolio/goethe.html</loc>
     <lastmod>2026-08-01</lastmod>
     <priority>0.6</priority>
@@ -51,12 +46,5 @@
   <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=BPK67</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
   <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=sports-1</loc><lastmod>2026-08-01</lastmod><priority>0.5</priority></url>
 
-  <!-- ===== งานซ่อมรถ (กลุ่ม my-work) ===== -->
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=ac-vent-center</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=headliner</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=coin-holder</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=door-panel</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=armrest</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
-  <url><loc>https://panyakorn-pan.github.io/panyakorn-portfolio/project.html?slug=side-vents</loc><lastmod>2026-08-02</lastmod><priority>0.8</priority></url>
 
 </urlset>

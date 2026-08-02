@@ -272,6 +272,7 @@ const PROJECTS = [
     category: 'series5 f10',
     group: 'my-work',
     date: '',
+    video: 'https://youtu.be/pOOG4McBHlY',
     description: '[แก้ไขตรงนี้: เล่าว่าเดิมช่องแอร์มีปัญหาอะไร ถอดเปลี่ยนยังไง ผลออกมาเป็นยังไง]',
     descriptionEn: '',
     images: [

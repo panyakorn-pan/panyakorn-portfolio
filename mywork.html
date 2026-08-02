@@ -7,6 +7,24 @@
 <meta name="description" content="ผลงานซ่อมและตกแต่งภายในรถยนต์ของ ปัณยกร สิงห์ดวง (Panyakorn Singhadoung) — งานหลังคาภายใน ช่องแอร์ คอนโซล และงานภายในอื่นๆ">
 <link rel="canonical" href="https://panyakorn-pan.github.io/panyakorn-portfolio/mywork.html">
 
+<!-- ==========================================================================
+     🚧 หน้านี้ถูก "ซ่อน" อยู่ ยังไม่เปิดให้คนทั่วไปเห็น
+     ==========================================================================
+     ตอนนี้:
+       - ไม่มีเมนู My Work ในแถบบนของทุกหน้า (ไม่มีทางกดเข้ามาเจอ)
+       - ไม่อยู่ใน sitemap.xml
+       - บรรทัด noindex ข้างล่างสั่ง Google ไม่ให้เก็บหน้านี้เข้าคลัง
+     ไฟล์ยังอยู่ครบ เปิดดูเองได้ที่ mywork.html แต่คนอื่นหาไม่เจอ
+
+     ✅ พร้อมเปิดให้ทุกคนเห็นเมื่อไหร่ ทำ 3 อย่างนี้:
+       1. ลบบรรทัด <meta name="robots" content="noindex"> ข้างล่างทิ้ง
+       2. ใส่เมนูกลับในไฟล์ .html ทั้ง 6 ไฟล์ วางไว้ก่อนบรรทัด Hall of Frame:
+            <a href="mywork.html" class="nav-link">My Work</a>
+          (ในไฟล์ mywork.html เองให้ใส่เป็น class="nav-link active")
+       3. ใส่ URL กลับใน sitemap.xml — ดูตัวอย่างในคู่มือ README หัวข้อ My Work
+     ========================================================================== -->
+<meta name="robots" content="noindex, nofollow">
+
 <!-- ===== การ์ดพรีวิวตอนแชร์ลิงก์ (ดูคำอธิบายเต็มใน index.html) ===== -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Panyakorn Singhadoung">
@@ -58,7 +76,6 @@
     <nav class="navbar__nav" id="navMenu">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">My Profile</a>
-      <a href="mywork.html" class="nav-link active">My Work</a>
       <a href="portfolio.html" class="nav-link">Hall of Frame</a>
     </nav>
     <button class="navbar__toggle" id="navToggle" aria-label="เปิดเมนู">
