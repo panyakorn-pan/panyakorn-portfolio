@@ -37,7 +37,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=17">
+<link rel="stylesheet" href="css/style.css?v=18">
 </head>
 <body>
 
@@ -92,7 +92,9 @@
     <!-- ⚠️ data-groups บอก js/portfolio.js ว่าหน้านี้แสดงผลงานกลุ่มไหน
          ถ้าลบบรรทัดนี้ หน้าจะกลายเป็นแสดงผลงานของ Hall of Frame แทน -->
     <div class="portfolio__filters" id="portfolioFilters"></div>
-    <div class="portfolio__grid" id="portfolioGrid" data-groups="my-work"></div>
+    <!-- portfolio__grid--shop = โหมดช็อป 4 คอลัมน์ รูปจัตุรัส มีช่องไฟ (ดูคำอธิบายใน css)
+         ถ้าลบคลาสนี้ออก หน้านี้จะกลายเป็นการ์ดใหญ่ 2 คอลัมน์เหมือน Hall of Frame -->
+    <div class="portfolio__grid portfolio__grid--shop" id="portfolioGrid" data-groups="my-work"></div>
   </section>
 
   <!-- ===== กล่องติดต่อ ===== -->
@@ -131,8 +133,8 @@
 
 <a href="#" class="scroll-top" id="scrollTop" aria-label="กลับขึ้นบนสุด">↑</a>
 
-<script src="js/projects-data.js?v=17"></script>
-<script src="js/portfolio.js?v=17"></script>
-<script src="js/script.js?v=17"></script>
+<script src="js/projects-data.js?v=18"></script>
+<script src="js/portfolio.js?v=18"></script>
+<script src="js/script.js?v=18"></script>
 </body>
 </html>
