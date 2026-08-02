@@ -28,14 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('projectMeta').textContent = project.date || '';
   // รายละเอียดงาน — สร้างไว้ 2 ภาษา แล้วให้ระบบเปลี่ยนภาษาใน js/script.js สลับให้เอง
   // (ถ้าไม่ได้ใส่ descriptionEn ไว้ จะใช้ข้อความภาษาไทยแสดงทั้งสองภาษา)
+  // ใช้ innerHTML เหมือนช่องรางวัลด้านล่าง เพื่อให้ใส่แท็กช่วยจัดหน้าได้ เช่น
+  // <span class="nowrap">(BPK9 International hospital)</span> กันวงเล็บถูกหักครึ่งคนละบรรทัด
   const descWrap = document.getElementById('projectDesc');
   const descTh = project.description || '';
   const descEn = project.descriptionEn || descTh;
-  [['th', descTh], ['en', descEn]].forEach(([lang, text]) => {
+  [['th', descTh], ['en', descEn]].forEach(([lang, html]) => {
     const p = document.createElement('p');
     p.className = 'project-detail__desc';
     p.dataset.lang = lang;
-    p.textContent = text;
+    p.innerHTML = html;
     descWrap.appendChild(p);
   });
 

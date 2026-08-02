@@ -194,14 +194,18 @@ const PROJECTS = [
   },
   {
     slug: 'music-1',
-    title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    title: 'Heart of Care Health Fair 2025',
     category: 'music',
     group: 'other-skills',
-    date: '',
-    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
-    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
+    date: 'วันที่ 5-9 กันยายน 2025 · Central Rama2, Bangkok, Thailand',
+    description: 'เข้าร่วมเล่นดนตรีในงาน Heart of Care Health Fair 2025 ในตำแหน่งมือเบส กับทางโรงพยาบาลบางปะกอก9 <span class="nowrap">(BPK9 International hospital)</span>',
+    descriptionEn: "Joined as the bassist for a performance at the Heart of Care Health Fair 2025, an event held by BPK9 International Hospital",
     images: [
-      'images/projects/music-1/1.png'
+      'images/projects/rama2_68/1.png',
+      'images/projects/rama2_68/2.jpg',
+      'images/projects/rama2_68/3.jpg',
+      'images/projects/rama2_68/4.jpg',
+      'images/projects/rama2_68/5.jpg'
     ]
   },
   {
