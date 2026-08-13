@@ -231,12 +231,12 @@ const PROJECTS = [
   },
   {
     slug: 'BPK67',
-    title: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
+    title: 'MIni Heart of Care Health Fair 2024',
     category: 'music',
     group: 'other-skills',
     date: '',
-    description: 'ตัวจริงเค้ายุ่งอยู่ ยังไม่ว่างมาลงงาน รอแปปนะคร้าบบบบ',
-    descriptionEn: "The owner's a bit tied up right now and hasn't had time to put this one up. Hang tight!",
+    description: 'เข้าร่วมเล่นดนตรีในงาน Heart of Care Health Fair 2024 ในตำแหน่งมือเบส กับทางโรงพยาบาลบางปะกอก9 <span class="nowrap">(BPK9 International hospital)</span>',
+    descriptionEn: "Joined as the bassist for a performance at the Heart of Care Health Fair 2024, an event held by BPK9 International Hospital",
     images: [
       'images/projects/BPK67/1.jpg'
     ]
