@@ -1261,3 +1261,259 @@ body.is-leaving .page-curtain {
   .footer__top { flex-direction: column; }
 }
 
+/* ==========================================================================
+   Modern refresh — ปรับหน้าตาให้โมเดิร์นขึ้น (ธีมขาวดำเดิม โครงหน้า/ข้อความเดิมทุกอย่าง)
+   แก้เฉพาะ CSS ล้วน ไม่ได้เพิ่ม element ใหม่ในหน้าเว็บ
+   ⚠️ ก้อนนี้ต้องอยู่ท้ายไฟล์เสมอ เพราะตั้งใจเขียนทับกฎด้านบน (รวมถึงกฎจอเล็ก)
+   ========================================================================== */
+:root {
+  --radius: 14px;
+  --border: #222;
+  --border-strong: #333;
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+body {
+  /* แสงจางๆ มุมขวาบน ให้พื้นดำไม่แบน */
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255,255,255,.045), transparent 60%),
+    var(--bg);
+}
+/* เกรนบางมากทับทั้งหน้า — pointer-events: none เลยไม่ขวางการคลิก */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Navbar: แคปซูลลอย ---------- */
+.navbar,
+.navbar.scrolled { top: 14px; background: none; border: 0; backdrop-filter: none; }
+.navbar__inner {
+  height: 60px;
+  max-width: 1120px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 999px;
+  background: rgba(14,14,14,.55);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  padding: 0 10px 0 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+.navbar__nav { gap: 2px; background: rgba(255,255,255,.04); padding: 4px; border-radius: 999px; }
+.nav-link {
+  font-size: .78rem; letter-spacing: .8px;
+  padding: 8px 16px; border-radius: 999px;
+  transition: color .2s ease, background .25s var(--ease);
+}
+.nav-link::after { display: none; }
+.nav-link:hover { background: rgba(255,255,255,.06); }
+.nav-link.active { background: var(--text); color: #000; }
+
+/* ---------- ปุ่ม: ทรงแคปซูล + ลูกศรในวงกลม ---------- */
+.btn-outline,
+.btn-solid {
+  border-radius: 999px;
+  padding: 8px 8px 8px 24px;
+  gap: 14px;
+  letter-spacing: .8px;
+  transition: background .3s var(--ease), color .3s var(--ease), border-color .3s ease;
+}
+.btn-outline { border-color: var(--border-strong); }
+.btn-outline:hover { border-color: var(--text); }
+.btn-outline .arrow,
+.btn-solid .arrow {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--text); color: #000;
+  transition: transform .35s var(--ease), background .3s ease, color .3s ease;
+}
+.btn-solid .arrow { background: #000; color: var(--text); }
+.btn-outline:hover .arrow { background: #000; color: var(--text); transform: rotate(-45deg); }
+.btn-solid:hover .arrow { transform: rotate(-45deg); }
+/* ปุ่มที่ไม่มีวงกลมลูกศร (เช่น ← Back to Home) ใช้ระยะซ้ายขวาเท่ากัน */
+.btn-outline:not(:has(.arrow)),
+.btn-solid:not(:has(.arrow)) { padding: 13px 24px; }
+.btn-doi { border-radius: 999px; }
+
+/* ---------- Hero / บล็อกแบ่งครึ่งหน้าแรก: กล่องมุมโค้งแยกกัน ---------- */
+.split-block { border-bottom: 0; gap: 14px; padding: 0 14px 14px; min-height: 600px; }
+/* บล็อกแรก (hero) เว้นที่ให้ navbar ลอย และสูงเต็มจอ */
+.split-block:first-of-type { padding-top: 90px; min-height: 100vh; }
+.split-block__panel {
+  background: linear-gradient(160deg, #111 0%, #050505 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.split-block__media { border-radius: 24px; border: 1px solid var(--border); }
+.split-block__media img { transition: transform 1.2s var(--ease); }
+.split-block:hover .split-block__media img { transform: scale(1.04); }
+/* แสงวงกลมจางๆ หลังชื่อ */
+.hero-panel::after {
+  content: ''; position: absolute; width: 520px; height: 520px;
+  left: -160px; bottom: -220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.08), transparent 65%);
+  pointer-events: none;
+}
+.hero-panel__name .line-lg { letter-spacing: -1.5px; }
+.preview-panel__title { letter-spacing: -1px; font-size: clamp(2rem, 4.4vw, 3rem); }
+
+/* ---------- หัวหน้าย่อย ---------- */
+.page-header__eyebrow { display: inline-flex; align-items: center; gap: 10px; }
+.page-header__eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+.page-header__title { letter-spacing: -1.5px; }
+.section__title { letter-spacing: -.5px; }
+
+/* ---------- ปุ่มกรอง: รวมเป็นแถบสลับก้อนเดียว ---------- */
+.portfolio__filters {
+  display: inline-flex; gap: 4px; padding: 4px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface);
+}
+.filter-pill { border: 0; padding: 9px 20px; }
+.filter-pill:hover { color: var(--text); }
+
+/* ---------- การ์ดผลงาน: แยกใบ มุมโค้ง ลอยขึ้นตอนชี้ ---------- */
+.portfolio__grid,
+.portfolio__grid.portfolio__grid--shop { gap: 18px; background: none; border: 0; }
+.project-card,
+.portfolio__grid--shop .project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .45s var(--ease), border-color .3s ease, box-shadow .45s var(--ease);
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 50px -20px rgba(0,0,0,.8);
+  background: var(--surface);
+}
+.project-thumb { margin: 8px 8px 0; border-radius: 14px; }
+.project-thumb img { transition: transform .8s var(--ease); }
+.project-card:hover .project-thumb img { transform: scale(1.05); }
+.project-badge {
+  border-radius: 999px; border-color: var(--border-strong);
+  background: rgba(255,255,255,.03); padding: 5px 12px;
+}
+.project-card__title { letter-spacing: -.2px; line-height: 1.45; }
+.project-cta {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top-style: dashed;
+}
+/* ลูกศรวงกลมท้ายการ์ด (วาดด้วย CSS ไม่ได้เพิ่มข้อความใน HTML) */
+.project-cta::after {
+  content: '→'; flex-shrink: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: .9rem; letter-spacing: 0;
+  transition: transform .35s var(--ease), background .3s ease, color .3s ease;
+}
+.project-card:hover .project-cta::after { background: var(--text); color: #000; transform: rotate(-45deg); }
+
+/* ---------- ไทม์ไลน์การศึกษา: กล่องต่อกันด้วยเส้น ---------- */
+.edu-timeline { gap: 14px; }
+.edu-item {
+  position: relative;
+  padding: 18px 20px 18px 48px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: rgba(255,255,255,.02);
+}
+.edu-dot {
+  position: absolute; left: 20px; top: 26px; margin: 0;
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 0; background: var(--text);
+  box-shadow: 0 0 0 4px rgba(255,255,255,.1);
+}
+.edu-item + .edu-item::before {
+  content: ''; position: absolute; left: 24px; top: -15px; height: 15px; width: 1px; background: var(--border-strong);
+}
+.lang-btn.active { box-shadow: 0 2px 10px rgba(255,255,255,.15); }
+.childhood__media { border: 1px solid var(--border); border-radius: 24px; }
+
+/* ---------- หน้า Goethe ---------- */
+.goethe-stats { gap: 14px; background: none; border: 0; }
+.goethe-stat {
+  border: 1px solid var(--border); border-radius: 18px;
+  background: linear-gradient(160deg, #141414, #0a0a0a);
+  padding: 26px 26px 24px;
+}
+.goethe-stat__num { font-size: clamp(2rem, 4vw, 2.8rem); letter-spacing: -1px; }
+.goethe-level__mark { letter-spacing: -1px; }
+.cert__thumb { border-radius: 12px; }
+.cert__thumb img { transition: opacity .25s ease, transform .6s var(--ease); }
+@media (hover: hover) and (pointer: fine) {
+  .cert:hover .cert__thumb img { transform: scale(1.04); }
+}
+
+/* ---------- หน้ารายละเอียดผลงาน ---------- */
+.project-slider { border-radius: 20px; }
+.project-slider__btn { backdrop-filter: blur(8px); }
+.project-slider__thumb { border-radius: 10px; }
+.project-award { border-radius: 0 var(--radius) var(--radius) 0; background: rgba(255,255,255,.03); }
+.project-video { border-radius: 20px; }
+
+/* ---------- หน้า My Work ---------- */
+.work-skill { border-radius: 999px; background: rgba(255,255,255,.02); }
+.work-contact { border-radius: 24px; background: linear-gradient(160deg, #121212, #070707); }
+
+/* ---------- Footer: กล่องใหญ่ + ช่องทางติดต่อทรงแคปซูล ---------- */
+.footer { border-top: 0; padding-top: 30px; }
+.footer__top {
+  border: 1px solid var(--border); border-radius: 24px;
+  padding: clamp(28px, 5vw, 56px);
+  background: linear-gradient(160deg, #121212, #070707);
+  align-items: center;
+}
+.footer__tagline { font-size: clamp(1.5rem, 3.4vw, 2.4rem); letter-spacing: -.8px; line-height: 1.2; }
+.contact-item {
+  padding: 10px 16px 10px 12px;
+  border: 1px solid var(--border); border-radius: 999px;
+  background: rgba(255,255,255,.02);
+  transition: border-color .25s ease, color .25s ease, background .25s ease;
+}
+a.contact-item:hover { border-color: var(--text); background: rgba(255,255,255,.05); }
+.contact-icon { width: 18px; height: 18px; }
+.footer__bottom { border-top: 0; }
+
+.scroll-top { background: var(--text); color: #000; border: 0; box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+.scroll-top:hover { opacity: .85; }
+
+@media (prefers-reduced-motion: reduce) {
+  .split-block:hover .split-block__media img,
+  .project-card:hover .project-thumb img,
+  .project-card:hover { transform: none; }
+}
+
+/* ---------- จอเล็ก (ต้องอยู่ท้ายสุด ทับกฎด้านบน) ---------- */
+@media (max-width: 900px) {
+  .split-block { padding: 0 10px 10px; gap: 10px; }
+  .split-block:first-of-type { padding-top: 84px; min-height: unset; }
+}
+@media (max-width: 720px) {
+  .navbar, .navbar.scrolled { top: 10px; }
+  .navbar__inner { margin: 0 10px; width: auto; padding: 0 6px 0 18px; height: 56px; }
+  /* เมนูมือถือ: กล่องลอยมุมโค้ง ตอนปิดซ่อนสนิท (เดิมเลื่อนขึ้นไม่พ้น เห็นเมนูโผล่ขอบบน) */
+  .navbar__nav {
+    top: 76px; left: 10px; right: 10px;
+    border-radius: 20px; border: 1px solid var(--border); padding: 8px;
+    background: rgba(14,14,14,.94); backdrop-filter: blur(16px);
+    transform: translateY(-8px); opacity: 0; visibility: hidden;
+    transition: transform .3s var(--ease), opacity .25s ease, visibility .25s ease;
+  }
+  .navbar__nav.open { transform: none; opacity: 1; visibility: visible; }
+  .nav-link { padding: 14px 16px; }
+  .portfolio__filters { display: flex; width: 100%; }
+  .filter-pill { flex: 1; }
+  /* คำอธิบายใต้หัวข้อแบบจัดกลาง (Hall of Frame) เดิมบังคับให้อยู่บรรทัดเดียว
+     จอมือถือแคบกว่าประโยค เลยดันทั้งหน้าให้กว้างเกินจอ ปุ่มเมนูโดนตัดขอบขวา
+     จอเล็กยอมให้ขึ้นบรรทัดใหม่แทน */
+  .page-header--center .page-header__desc { white-space: normal; font-size: .95rem; }
+}
+
