@@ -61,8 +61,8 @@ const PROJECTS = [
     date: 'วันที่ 21–23 มีนาคม 2024 · Amari Hotel, Pattaya, Thailand',
     description: '&emsp;&emsp;&emsp;&emsp;พัฒนาชุดแขนหุ่นยนต์ต้นทุนต่ำโดยใช้ชิ้นส่วนที่ผลิตด้วยเครื่องพิมพ์ 3 มิติจากวัสดุ PLA เพื่อให้สามารถสร้างและใช้งานระบบแขนกลได้ในต้นทุนที่เข้าถึงได้ง่าย ระบบประกอบด้วยโครงสร้างแขนกล ชุดขับเคลื่อน และอุปกรณ์ควบคุมที่ทำงานร่วมกัน เพื่อให้แขนหุ่นยนต์สามารถเคลื่อนที่และทำงานตามคำสั่งได้ โดยออกแบบชิ้นส่วนให้เหมาะสมกับการผลิตด้วยเครื่องพิมพ์ 3 มิติ รวมถึงการประกอบและทดสอบการทำงานของแต่ละส่วน ก่อนนำมาทำงานร่วมกันเป็นระบบแขนหุ่นยนต์',
     descriptionEn: '&emsp;&emsp;&emsp;&emsp;Developed a low-cost robotic arm kit using 3D-printed with PLA to make robotic systems more affordable and accessible for educational use. The system consists of the robotic arm structure, actuators, and control components working together to allow the arm to move and perform tasks according to programmed commands. The mechanical parts were designed specifically for 3D printing, followed by assembly and testing of each component before integrating them into a complete robotic arm system.',
-    award: 'Certificate of Appreciation — จาก รศ.ดร.ธเนศ ธนิตย์ธีรพันธ์ คณบดีคณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี มจธ. งานประชุมวิชาการระดับชาติด้านนวัตกรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024)',
-    awardEn: 'Certificate of Appreciation — presented by Assoc. Prof. Dr. Tanes Tanitteerapan, Dean of the Faculty of Industrial Education and Technology, KMUTT, at the 4th National Conference on Learning Innovation in Science and Technology (NCLIST 2024)',
+    award: 'Certificate of Appreciation — จากงานประชุมวิชาการระดับชาติด้านนวัตกรรมการเรียนรู้ทางวิทยาศาสตร์และเทคโนโลยี ครั้งที่ 4 (NCLIST 2024)',
+    awardEn: 'Certificate of Appreciation — At the 4th National Conference on Learning Innovation in Science and Technology (NCLIST 2024)',
     paper: 'files/papers/NCLIST2024.pdf',
     images: [
       'images/projects/NCLIST2024/1.jpg',
