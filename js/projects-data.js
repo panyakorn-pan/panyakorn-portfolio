@@ -85,8 +85,8 @@ const PROJECTS = [
     date: 'วันที่ 30–31 มีนาคม 2024 · Paradise Park, Bangkok, Thailand',
     description: '&emsp;&emsp;&emsp;&emsp;ในภารกิจ Carry My Luggage หุ่นยนต์ต้องตรวจจับและระบุตำแหน่งของกระเป๋า เข้าไปหยิบกระเป๋า และติดตามบุคคลออกจากพื้นที่ตามเส้นทางที่กำหนด ส่วนภารกิจ Find My Mate หุ่นยนต์ต้องค้นหาบุคคลภายในพื้นที่ ระบุตำแหน่งและลักษณะของบุคคลจากข้อมูลที่ตรวจจับได้ ก่อนนำข้อมูลกลับมาแจ้งให้ผู้ใช้งานทราบ โดยการทำงานของระบบต้องอาศัยการทำงานร่วมกันของ Computer Vision, Speech Processing, Autonomous Navigation และ Robot Manipulation เพื่อให้หุ่นยนต์สามารถปฏิบัติภารกิจได้อย่างอัตโนมัติ',
     descriptionEn: '&emsp;&emsp;&emsp;&emsp;In the Carry My Luggage mission, the robot had to detect and locate a piece of luggage, approach and pick it up, and follow a person along a designated route. In the Find My Mate mission, the robot had to search for a person within the designated area, identify their location and characteristics based on the detected information, and report the information back to the user. The system integrated Computer Vision, Speech Processing, Autonomous Navigation, and Robot Manipulation to enable the robot to perform these tasks autonomously.',
-    award: 'การแข่งขันมีทีมเข้าร่วมทั้งหมด 93 ทีมจาก 44 สถาบัน และสามารถผ่านเข้าสู่รอบ 24 ทีมสุดท้าย โดยในรุ่นมัธยมศึกษามีทีมที่ผ่านเข้ารอบเพียง 4 ทีม และได้รับรางวัล รองชนะเลิศอันดับที่ 1 — Thailand Open ROS and Smart Robot Competition 2024',
-    awardEn: 'The competition included 93 teams from 44 institutions. The team advanced to the final 24 teams, with only 4 teams from the high-school category reaching this stage, and received 1st Runner-up — Thailand Open ROS and Smart Robot Competition 2024.',
+    award: 'รับรางวัล รองชนะเลิศอันดับที่ 1 — Thailand Open ROS and Smart Robot Competition 2024',
+    awardEn: 'Received 1st Runner-up — Thailand Open ROS and Smart Robot Competition 2024.',
     paper: 'files/papers/Description-Paper-@home-education.pdf',
     images: [
       'images/projects/@Home-education/1.jpg',
@@ -147,6 +147,23 @@ const PROJECTS = [
     ]
   },
   {
+    slug: 'PTBK2026',
+    title: 'ให้ความรู้และฝึกบังคับแขนกลหุ่นยนต์แก่น้องๆผ่านการลงมือทำจริง',
+    category: 'Community Outreach',
+    group: 'mainframe',
+    date: 'วันที่ 10 กันยายน 2026 · Prathomthanbin Kamphaensean School, Nakhon Pathom, Thailand',
+    description: 'อาสาให้ความรู้น้องๆ ผ่านการลงมือทำจริง โดยให้น้องได้ฝึกควบคุมแขนกลหุ่นยนต์โดยการจำลองการทำงานในสถานีคัดแยกสินค้า พร้อมอธิบายหลักการทำงานและการนำไปใช้ในโรงงานอุตสาหกรรม เพื่อจุดประกายความสนใจด้านหุ่นยนต์ และเพิ่มโอกาสในการเข้าถึงการเรียนรู้ด้านเทคโนโลยีให้แก่น้องๆ',
+    descriptionEn: 'Volunteered to teach primary students through hands-on learning, letting them practice controlling a robotic arm at a simulated product-sorting station while explaining how it works and how it is used in industry, to spark their interest in robotics and give them greater access to technology education.',
+    images: [
+      'images/projects/PTBK2026/1.jpg',
+      'images/projects/PTBK2026/2.jpg',
+      'images/projects/PTBK2026/3.jpg',
+      'images/projects/PTBK2026/4.jpg',
+      'images/projects/PTBK2026/5.jpg',
+      'images/projects/PTBK2026/6.jpg'
+    ]
+  },
+  {
     slug: 'educate',
     title: 'อบรมการขับรถแข่งกับทาง HGR Academy',
     category: 'educate',
@@ -181,6 +198,7 @@ const PROJECTS = [
       'images/projects/training-course-on-car-air/5.jpg'
     ]
   },
+ 
 
 
 //========================= Other skills ==========================
